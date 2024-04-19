@@ -82,7 +82,6 @@ public class UIDeneme extends javax.swing.JFrame {
         getContentPane().add(search_bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 43, 490, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Menu.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -90,6 +89,7 @@ public class UIDeneme extends javax.swing.JFrame {
 
     private void logIn_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_buttonActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_logIn_buttonActionPerformed
 
     
