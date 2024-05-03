@@ -4,6 +4,10 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author feritbilgi
@@ -148,6 +152,24 @@ public class ClientSignUpPage extends javax.swing.JFrame {
 
     private void signUp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_buttonActionPerformed
         // TODO add your handling code here:
+        String firstName = name_textfield1.getText();
+        String lastName = surname_textfield.getText();
+        String gender = "";
+        if(man.isSelected()){
+            gender = "Erkek";
+        }
+        if(woman.isSelected()){
+            gender = "Kadın";
+        }
+        int age = Integer.parseInt(age_textfield.getText());
+        String email = email_textfield.getText();
+        String password = "";
+        if (password_field.getText().equals(password_field1.getText())){
+            char[] pf = password_field.getPassword();
+            password = new String(pf);
+        }
+        int phoneNumber = Integer.parseInt(phoneNumber_textField.getText());
+        insert(firstName, lastName, gender, age, email, password, phoneNumber);
     }//GEN-LAST:event_signUp_buttonActionPerformed
 
     private void signUp_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_section_buttonActionPerformed
@@ -187,6 +209,26 @@ public class ClientSignUpPage extends javax.swing.JFrame {
                 new ClientSignUpPage().setVisible(true);
             }
         });
+    }
+    
+    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, int phoneNumber){
+        Connection con = patientDbConnection.connect();
+        PreparedStatement ps = null;
+        try{
+            String sql = "INSERT INTO patients(firstName, lastName, gender, age, email, password, phoneNumber) VALUES(?,?,?,?,?,?,?)";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, firstName);
+            ps.setString(2, lastName);
+            ps.setString(3, gender);
+            ps.setInt(4, age);
+            ps.setString(5, email);
+            ps.setString(6, password);
+            ps.setInt(7, phoneNumber);
+            ps.execute();
+            System.out.println("Data has been inserted!");
+        } catch(SQLException e){
+            System.out.println(e.toString());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,6 +4,10 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author feritbilgi
@@ -83,6 +87,11 @@ public class SignUpClinicPage extends javax.swing.JFrame {
         signUp_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_button.setBorderPainted(false);
+        signUp_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUp_buttonActionPerformed(evt);
+            }
+        });
         getContentPane().add(signUp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 800, 290, 70));
 
         upload_photo.setBackground(new java.awt.Color(255, 255, 255));
@@ -141,13 +150,54 @@ public class SignUpClinicPage extends javax.swing.JFrame {
     }//GEN-LAST:event_search_buttonActionPerformed
 
     private void branch_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_branch_textfieldActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_branch_textfieldActionPerformed
 
     private void upload_photoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upload_photoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_upload_photoActionPerformed
 
+    private void signUp_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_buttonActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        String firstName = name_textfield.getText();
+        String location = location_textfield.getText();
+        String email = email_textfield.getText();
+        String password = "";
+        if (password_field.getText().equals(password_field1.getText())){
+            char[] pf = password_field.getPassword();
+            password = new String(pf);
+        }
+        String branches = branch_textfield.getText();
+        String insurance = insurance_textfield.getText();
+        String doctors = doctors_textfield.getText();
+        String about = about_textfield.getText();
+        
+        int phoneNumber = Integer.parseInt(communication_textfield.getText());
+        insert(firstName, location,  phoneNumber, email, password, branches, doctors, insurance, about);
+    }//GEN-LAST:event_signUp_buttonActionPerformed
+
+    private static void insert(String name, String location, int phoneNumber,String email, String password, String branches, String doctors, String insurance,  String about){
+        Connection con = clinicDbConnection.connect();
+        PreparedStatement ps = null;
+        try{
+            String sql = "INSERT INTO clinics(name, location, phoneNumber, email, password, branches, doctors, insurance, about) VALUES(?,?,?,?,?,?,?,?,?)";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setString(2, location);
+            ps.setInt(3, phoneNumber);           
+            ps.setString(4, email);
+            ps.setString(5, password);
+            ps.setString(6, branches);
+            ps.setString(7, doctors);            
+            ps.setString(8, insurance);            
+            ps.setString(9, about);
+            ps.execute();
+            System.out.println("Data has been inserted!");
+        } catch(SQLException e){
+            System.out.println(e.toString());
+        }
+    }
     /**
      * @param args the command line arguments
      */
