@@ -1,26 +1,26 @@
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patientDbConnection.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/UIDeneme.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpSectionPage.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicDbConnection.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctorDbConnection.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/DoctorEditPage.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/AccountChooseJFrame.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/LoginAccountChoose.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpClinicPage.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/HastaKabul.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PharmacyDisplayJFrame.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Listing.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Pharmacy.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_doctor.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_patient.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/MainMenuPatient.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicEditPageJFrame.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpDoctorPage.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/searchResult.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/DoctorEditPageJFrame.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/ClientSignUpPage.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PatientEditPage.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/searchFrame.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PatientEditPageJFrame.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_clinic.java
-/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/ClinicEditPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_clinic.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctorDbConnection.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/MainMenuPatient.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/LoginAccountChoose.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpClinicPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_doctor.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicEditPageJFrame.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PharmacyDisplayJFrame.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/AccountChooseJFrame.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpDoctorPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/HastaKabul.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/ClientSignUpPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/DoctorEditPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpSectionPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PatientEditPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/searchFrame.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PatientEditPageJFrame.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/DoctorEditPageJFrame.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/UIDeneme.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Pharmacy.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Listing.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/searchResult.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/ClinicEditPage.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicDbConnection.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patientDbConnection.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patient_appoinments.java

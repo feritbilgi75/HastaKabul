@@ -33,6 +33,7 @@ public class searchFrame extends javax.swing.JFrame {
         insuranceButton = new javax.swing.JButton();
         appointmentsButton = new javax.swing.JButton();
         logoLabel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         listFilterPanel = new javax.swing.JPanel();
         listingPanel = new javax.swing.JPanel();
         listingBox = new javax.swing.JComboBox<>();
@@ -85,6 +86,13 @@ public class searchFrame extends javax.swing.JFrame {
         logoLabel.setIcon(new javax.swing.ImageIcon("/Users/aslikanber/Desktop/MainMenu (1).png")); // NOI18N
         logoLabel.setText("jLabel2");
 
+        jButton1.setIcon(new javax.swing.ImageIcon("/Users/aslikanber/Desktop/SearchIcon.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
@@ -92,14 +100,16 @@ public class searchFrame extends javax.swing.JFrame {
             .addGroup(searchPanelLayout.createSequentialGroup()
                 .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(searchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchBar, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(patientAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(insuranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(111, 111, 111)
                 .addComponent(appointmentsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 89, Short.MAX_VALUE))
+                .addGap(0, 58, Short.MAX_VALUE))
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +125,10 @@ public class searchFrame extends javax.swing.JFrame {
                     .addComponent(appointmentsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(patientAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(insuranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(insuranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(searchPanelLayout.createSequentialGroup()
+                            .addGap(9, 9, 9)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(31, 31, 31))
         );
 
@@ -239,6 +252,10 @@ public class searchFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_appointmentsButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,6 +297,7 @@ public class searchFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox ezcaneFilter;
     private javax.swing.JPanel filterPanel;
     private javax.swing.JButton insuranceButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel listFilterPanel;
     private javax.swing.JComboBox<String> listingBox;
     private javax.swing.JPanel listingPanel;
