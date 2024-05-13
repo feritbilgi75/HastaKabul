@@ -27,7 +27,6 @@ public class MainMenuPatient extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        listing1 = new com.mycompany.projeuideneme.Listing();
         seePharmacyButton = new javax.swing.JButton();
         menuImage = new javax.swing.JLabel();
         search_textfield = new javax.swing.JTextField();
@@ -47,40 +46,31 @@ public class MainMenuPatient extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(listing1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 700, Short.MAX_VALUE))
+            .addGap(0, 1360, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(listing1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 1360, 510));
 
-        seePharmacyButton.setBackground(new java.awt.Color(255, 255, 255));
         seePharmacyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/PharmacyButton.png"))); // NOI18N
         seePharmacyButton.setBorderPainted(false);
         getContentPane().add(seePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 470, 200));
         getContentPane().add(menuImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 830, 430));
-
-        search_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        search_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(search_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 500, 70));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 51, 0));
         jButton1.setText("Sigortalarım");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 40, 160, 60));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 51, 0));
         jButton2.setText("Randevularım");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 40, 150, 60));
 
-        search_button.setBackground(new java.awt.Color(255, 255, 255));
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
         search_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +79,6 @@ public class MainMenuPatient extends javax.swing.JFrame {
         });
         getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 50, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/User_Button.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +143,6 @@ public class MainMenuPatient extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private com.mycompany.projeuideneme.Listing listing1;
     private javax.swing.JLabel menuImage;
     private javax.swing.JButton search_button;
     private javax.swing.JTextField search_textfield;
