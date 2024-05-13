@@ -43,19 +43,19 @@ public class patient_appoinments extends javax.swing.JFrame {
         jTextField1.setBorder(null);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 52, 430, 30));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/🦆 icon _magnifying glass_.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon _magnifying glass_.png"))); // NOI18N
         jButton1.setBorder(null);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 43, 50, 40));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Randevularım (1).png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Randevularım.png"))); // NOI18N
         jButton2.setBorder(null);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 170, 30));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Sigortalarım.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Sigortalarım.png"))); // NOI18N
         jButton3.setBorder(null);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 50, 160, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appointments_patient (3).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/appointments_patient (3).png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
