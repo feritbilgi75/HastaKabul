@@ -7,6 +7,11 @@
  *
  * @author LENOVO
  */
+
+
+package com.mycompany.projeuideneme;
+
+
 public class patient_appoinments extends javax.swing.JFrame {
 
     /**
