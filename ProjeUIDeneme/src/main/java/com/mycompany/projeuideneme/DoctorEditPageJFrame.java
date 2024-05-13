@@ -56,7 +56,6 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design/editMenuDoctor.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
         jLabel1.setMinimumSize(new java.awt.Dimension(1440, 1024));
         jLabel1.setPreferredSize(new java.awt.Dimension(1440, 1024));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));

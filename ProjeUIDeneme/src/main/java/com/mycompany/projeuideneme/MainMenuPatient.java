@@ -27,10 +27,6 @@ public class MainMenuPatient extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-<<<<<<< HEAD
-=======
-        listing1 = new com.mycompany.projeuideneme.Listing("feritbilgibilgi@gmail.com");
->>>>>>> 28242c6 (fix)
         seePharmacyButton = new javax.swing.JButton();
         menuImage = new javax.swing.JLabel();
         search_textfield = new javax.swing.JTextField();
@@ -63,6 +59,9 @@ public class MainMenuPatient extends javax.swing.JFrame {
         seePharmacyButton.setBorderPainted(false);
         getContentPane().add(seePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 470, 200));
         getContentPane().add(menuImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 830, 430));
+
+        search_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        search_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(search_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 500, 70));
 
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
