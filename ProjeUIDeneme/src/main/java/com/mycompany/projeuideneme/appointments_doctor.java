@@ -44,11 +44,11 @@ public class appointments_doctor extends javax.swing.JFrame {
         jTextField1.setBorder(null);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 42, 430, 40));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/🦆 icon _magnifying glass_.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon_magnifying_glass.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 43, 50, 40));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Randevularım (1).png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Randevularım.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 43, 170, 40));
 
@@ -69,7 +69,7 @@ public class appointments_doctor extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 1210, 720));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appointment_docotr_patient_info.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/appointment_docotr_patient_info.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
