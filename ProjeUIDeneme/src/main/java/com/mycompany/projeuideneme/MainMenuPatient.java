@@ -27,6 +27,10 @@ public class MainMenuPatient extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+<<<<<<< HEAD
+=======
+        listing1 = new com.mycompany.projeuideneme.Listing("feritbilgibilgi@gmail.com");
+>>>>>>> 28242c6 (fix)
         seePharmacyButton = new javax.swing.JButton();
         menuImage = new javax.swing.JLabel();
         search_textfield = new javax.swing.JTextField();

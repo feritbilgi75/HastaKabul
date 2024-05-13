@@ -81,7 +81,7 @@ public class UIDeneme extends javax.swing.JFrame {
         search_bar.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(search_bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 43, 490, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Menu.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/resources/ui_component_assets/LogIn_MenuPage.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

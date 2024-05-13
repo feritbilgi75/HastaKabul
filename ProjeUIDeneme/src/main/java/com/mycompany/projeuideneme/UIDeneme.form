@@ -144,7 +144,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ui_component_assets/LogIn_Menu.png"/>
+          <Image iconType="2" name="/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakal&#x131; Dosyalar/HastaKabul/ProjeUIDeneme/src/main/resources/ui_component_assets/LogIn_MenuPage.png"/>
         </Property>
       </Properties>
       <Constraints>

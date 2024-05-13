@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctorDbConnection.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpSectionPage.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PatientEditPage.java
@@ -21,3 +22,15 @@
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/ClientSignUpPage.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patientDbConnection.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/DoctorEditPage.java
+=======
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patientDbConnection.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Listing.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/UIDeneme.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctorDbConnection.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpSectionPage.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/MainMenuPatient.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpDoctorPage.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicDbConnection.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/ClientSignUpPage.java
+/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpClinicPage.java
+>>>>>>> 28242c6 (fix)
