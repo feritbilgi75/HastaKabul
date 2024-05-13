@@ -4,6 +4,11 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author feritbilgi
@@ -13,8 +18,40 @@ public class Listing extends javax.swing.JPanel {
     /**
      * Creates new form Listing
      */
-    public Listing() {
+    public Listing(String emailString) {
         initComponents();
+        Connection con = doctorDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select * from doctors where email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, emailString);
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
+            String firstName = rs.getString(1);
+            String statueOfDoctor = rs.getString("statue");
+            String name = statueOfDoctor + " Dr " + firstName;
+            
+            String branchOfDoctor = rs.getString("branch");
+            doctorNameText.setText(name);
+            bracnhText.setText(branchOfDoctor);
+            locationText.setText("Ankara");
+            jTextArea1.setText(rs.getString("about"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
     }
 
     /**
@@ -26,35 +63,29 @@ public class Listing extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DoctorNameText = new javax.swing.JLabel();
-        LocationText = new javax.swing.JLabel();
-        BracnhText = new javax.swing.JLabel();
+        locationText = new javax.swing.JLabel();
+        bracnhText = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         DoctorImage = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        doctorNameText = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DoctorNameText.setBackground(new java.awt.Color(255, 255, 255));
-        DoctorNameText.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 36)); // NOI18N
-        DoctorNameText.setForeground(new java.awt.Color(0, 0, 0));
-        DoctorNameText.setText("DR. Name And Surname");
-        add(DoctorNameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 270, 110));
+        locationText.setBackground(new java.awt.Color(255, 255, 255));
+        locationText.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 36)); // NOI18N
+        locationText.setForeground(new java.awt.Color(0, 0, 0));
+        locationText.setText("Location Text");
+        add(locationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 270, 110));
 
-        LocationText.setBackground(new java.awt.Color(255, 255, 255));
-        LocationText.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 36)); // NOI18N
-        LocationText.setForeground(new java.awt.Color(0, 0, 0));
-        LocationText.setText("Location Text");
-        add(LocationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 270, 110));
-
-        BracnhText.setBackground(new java.awt.Color(255, 255, 255));
-        BracnhText.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 36)); // NOI18N
-        BracnhText.setForeground(new java.awt.Color(0, 0, 0));
-        BracnhText.setText("Branch Text");
-        add(BracnhText, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 270, 110));
+        bracnhText.setBackground(new java.awt.Color(255, 255, 255));
+        bracnhText.setFont(new java.awt.Font("Hiragino Mincho ProN", 0, 36)); // NOI18N
+        bracnhText.setForeground(new java.awt.Color(0, 0, 0));
+        bracnhText.setText("Branch Text");
+        add(bracnhText, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 270, 110));
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
@@ -75,17 +106,25 @@ public class Listing extends javax.swing.JPanel {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Arrow.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 40));
+
+        doctorNameText.setBackground(new java.awt.Color(255, 255, 255));
+        doctorNameText.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        doctorNameText.setForeground(new java.awt.Color(0, 0, 0));
+        doctorNameText.setText("Doctor Something");
+        add(doctorNameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 280, 80));
     }// </editor-fold>//GEN-END:initComponents
 
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BracnhText;
     private javax.swing.JLabel DoctorImage;
-    private javax.swing.JLabel DoctorNameText;
-    private javax.swing.JLabel LocationText;
+    private javax.swing.JLabel bracnhText;
+    private javax.swing.JButton doctorNameText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel locationText;
     // End of variables declaration//GEN-END:variables
 }
