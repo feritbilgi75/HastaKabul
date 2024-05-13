@@ -7,6 +7,9 @@
  *
  * @author LENOVO
  */
+
+package com.mycompany.projeuideneme;
+
 public class appointments_clinic extends javax.swing.JFrame {
 
     /**
@@ -40,14 +43,14 @@ public class appointments_clinic extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/🦆 icon _magnifying glass_.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon _magnifying glass_.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 43, 50, 40));
 
         jTextField1.setBorder(null);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 52, 430, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Randevularım (1).png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Randevularım.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +65,7 @@ public class appointments_clinic extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 202, 120, 30));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SignUp Button.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp Button.png"))); // NOI18N
         jButton3.setBorderPainted(false);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 200, 130, 40));
 
@@ -99,7 +102,7 @@ public class appointments_clinic extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 310, 890));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/appointment_clinic (2).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/appointment_clinic (2).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

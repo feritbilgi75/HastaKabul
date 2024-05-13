@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_clinic.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctorDbConnection.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/MainMenuPatient.java
@@ -24,3 +25,31 @@
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicDbConnection.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patientDbConnection.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/patient_appoinments.java
+=======
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\ClientSignUpPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\Listing.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\UIDeneme.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\MainMenuPatient.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\PatientEditPageJFrame.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\SignUpDoctorPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\doctorDbConnection.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\appointments_clinic.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\HastaKabul.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\LoginAccountChoose.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\patientDbConnection.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\DoctorEditPageJFrame.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\DoctorEditPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\clinicEditPageJFrame.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\patient_appoinments.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\clinicDbConnection.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\searchFrame.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\Pharmacy.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\PharmacyDisplayJFrame.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\ClinicEditPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\PatientEditPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\SignUpSectionPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\SignUpClinicPage.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\searchResult.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\AccountChooseJFrame.java
+C:\Users\LENOVO\OneDrive\Masaüstü\HastaKabul\ProjeUIDeneme\src\main\java\com\mycompany\projeuideneme\appointments_doctor.java
+>>>>>>> e238a20096cd31557f01fc2c49d2dc293d90fbb9
