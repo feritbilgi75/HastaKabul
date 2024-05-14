@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +21,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
      * Creates new form PatientEditPageJFrame
      */
     
-    String email = "";
+    static String email = "";
     
     public PatientEditPageJFrame(String emailString) {
         initComponents();
@@ -36,9 +37,22 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
+            while (rs.next()){
+                String firstName = rs.getString("name");
+                String surname = rs.getString("surname");
+                //int age = rs.getInt("age");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                //int phoneNumber = rs.getInt("phoneNumber");
+            
+                nameText.setText(firstName);
+                surnameText.setText(surname);
+                //ageText.setText(Integer.toString(age));
+                passwordField.setText(password);
+                passwordField2.setText(password);
+                //phoneField.setText(phoneNumber);
+            }
+            
             
             // String branchOfDoctor = rs.getString("branch");
             // doctorNameText.setText(name);
@@ -194,11 +208,28 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         
         
         try{
-            String sql = "UPDATE users set firstName = ? WHERE email = ?";
+            String sql = "UPDATE users set firstName = ? lastname = ? email = ? password = ? WHERE email = ?";
             //bu üstteki kısmı genişleterek belli if koşullarıyla uyarlayabilirsin.
             ps = con.prepareStatement(sql);
-            ps.setString(1, "Ferit2İsim");
-            ps.setString(2, "feritbilgi@gmail.com");
+            
+            ps.setString(1, nameText.getText());
+            ps.setString(2, surnameText.getText());
+            ps.setString(3, emailText.getText());
+            ps.setInt(4, Integer.parseInt(ageText.getText()));
+            ps.setString(5, email);
+            String password1 = passwordField.getText();
+            String password2 = passwordField2.getText();
+
+            if (password1.equals(password2)){
+                ps.setString(6, surnameText.getText());
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Şifre aynı olmak zorunda");
+                throw new IllegalArgumentException();
+            }
+            
+            ps.setInt(7, Integer.parseInt(phoneField.getText()));
             ps.execute();
             System.out.println("Data has been updated");
         } catch(SQLException e){
@@ -241,7 +272,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PatientEditPageJFrame().setVisible(true);
+                new PatientEditPageJFrame(email).setVisible(true);
             }
         });
     }
