@@ -32,41 +32,52 @@ public class UIDeneme extends javax.swing.JFrame {
     private void initComponents() {
 
         email_textField = new javax.swing.JTextField();
-        logIn_section_button = new javax.swing.JButton();
-        logIn_button = new javax.swing.JButton();
-        signUp_section_button = new javax.swing.JButton();
         passwordField = new javax.swing.JPasswordField();
-        search_button = new javax.swing.JButton();
-        search_bar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        passwordLabel = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        signUp_section_button = new javax.swing.JButton();
+        logIn_section_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        email_textField.setBackground(new java.awt.Color(255, 255, 255));
-        email_textField.setForeground(new java.awt.Color(0, 0, 0));
         email_textField.setSelectionColor(new java.awt.Color(255, 255, 255));
-        getContentPane().add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 533, 480, 60));
-
-        logIn_section_button.setBackground(new java.awt.Color(255, 255, 255));
-        logIn_section_button.setForeground(new java.awt.Color(255, 255, 255));
-        logIn_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
-        logIn_section_button.setText("jButton2");
-        logIn_section_button.setBorderPainted(false);
-        getContentPane().add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 220, 50));
-
-        logIn_button.setBackground(new java.awt.Color(255, 255, 255));
-        logIn_button.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/ProjeUI/src/main/java/Assets/LogIn.png")); // NOI18N
-        logIn_button.setBorder(null);
-        logIn_button.setBorderPainted(false);
-        logIn_button.addActionListener(new java.awt.event.ActionListener() {
+        email_textField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logIn_buttonActionPerformed(evt);
+                email_textFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(logIn_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 780, 290, 60));
+        getContentPane().add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 533, 480, 60));
 
-        signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 480, 60));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        emailLabel.setBackground(new java.awt.Color(204, 204, 204));
+        emailLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
+        emailLabel.setForeground(java.awt.Color.red);
+        emailLabel.setText("Email");
+        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 140, 60));
+
+        passwordLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
+        passwordLabel.setForeground(java.awt.Color.red);
+        passwordLabel.setText("Password");
+        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 620, 170, 40));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LOGO_1.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 250, 260));
+
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
         signUp_section_button.addActionListener(new java.awt.event.ActionListener() {
@@ -74,33 +85,23 @@ public class UIDeneme extends javax.swing.JFrame {
                 signUp_section_buttonActionPerformed(evt);
             }
         });
-        getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 40, -1, -1));
+        jPanel1.add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 780, -1, -1));
 
-        passwordField.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 480, 60));
+        logIn_section_button.setForeground(new java.awt.Color(255, 255, 255));
+        logIn_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
+        logIn_section_button.setText("jButton2");
+        logIn_section_button.setBorderPainted(false);
+        logIn_section_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logIn_section_buttonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 780, 220, 50));
 
-        search_button.setBackground(new java.awt.Color(255, 255, 255));
-        search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
-        search_button.setBorderPainted(false);
-        getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
-
-        search_bar.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(search_bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 43, 490, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/resources/ui_component_assets/LogIn_MenuPage.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1450, 1030));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void logIn_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_buttonActionPerformed
-        // TODO add your handling code here:
-        //Login sonrası frame açacak contructor kurulduktan sonra küçük oynama gerek.
-        JFrame frame = new MainMenuPatient();
-        frame.setVisible(true);
-        setVisible(false);
-       
-    }//GEN-LAST:event_logIn_buttonActionPerformed
 
     private void signUp_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_section_buttonActionPerformed
         // TODO add your handling code here:
@@ -108,6 +109,20 @@ public class UIDeneme extends javax.swing.JFrame {
         accChose.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_section_buttonActionPerformed
+
+    private void email_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_textFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_email_textFieldActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
+
+    private void logIn_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_section_buttonActionPerformed
+        JFrame frame = new MainMenuPatient();
+        frame.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_logIn_section_buttonActionPerformed
 
     
     
@@ -147,13 +162,14 @@ public class UIDeneme extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField email_textField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton logIn_button;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logIn_section_button;
     private javax.swing.JPasswordField passwordField;
-    private javax.swing.JTextField search_bar;
-    private javax.swing.JButton search_button;
+    private javax.swing.JLabel passwordLabel;
     private javax.swing.JButton signUp_section_button;
     // End of variables declaration//GEN-END:variables
 }

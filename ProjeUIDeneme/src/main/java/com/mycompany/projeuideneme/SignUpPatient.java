@@ -165,7 +165,7 @@ public class SignUpPatient extends javax.swing.JFrame {
 
     private void login_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_section_buttonActionPerformed
         // TODO add your handling code here:
-        JFrame accChose = new AccountChooseJFrame();
+         JFrame accChose = new UIDeneme();
         accChose.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_login_section_buttonActionPerformed

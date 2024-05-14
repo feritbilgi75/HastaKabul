@@ -1,5 +1,6 @@
 com/mycompany/projeuideneme/doctorDbConnection.class
 com/mycompany/projeuideneme/SignUpClinicPage$1.class
+com/mycompany/projeuideneme/UIDeneme$4.class
 com/mycompany/projeuideneme/SignUpDoctorPage$5.class
 com/mycompany/projeuideneme/searchFrame$4.class
 com/mycompany/projeuideneme/SignUpPatient$3.class
@@ -20,14 +21,17 @@ com/mycompany/projeuideneme/MainMenuDoctor$5.class
 com/mycompany/projeuideneme/patient_appoinments$1.class
 com/mycompany/projeuideneme/DoctorEditPageJFrame$1.class
 com/mycompany/projeuideneme/MainMenuPatient$3.class
+com/mycompany/projeuideneme/doctor.class
 com/mycompany/projeuideneme/SignUpDoctorPage$2.class
 com/mycompany/projeuideneme/PatientEditPageJFrame$2.class
 com/mycompany/projeuideneme/AccountChooseJFrame$2.class
 com/mycompany/projeuideneme/clinicEditPageJFrame$5.class
 com/mycompany/projeuideneme/SignUpDoctorPage.class
 com/mycompany/projeuideneme/LoginAccountChoose.class
+com/mycompany/projeuideneme/clinicEditPageJFrame$8.class
 com/mycompany/projeuideneme/appointments_doctor$1.class
 com/mycompany/projeuideneme/MainMenuPatient.class
+com/mycompany/projeuideneme/Clinic.class
 com/mycompany/projeuideneme/SignUpDoctorPage$3.class
 com/mycompany/projeuideneme/clinicEditPageJFrame$2.class
 com/mycompany/projeuideneme/PatientEditPageJFrame$6.class
@@ -35,8 +39,10 @@ com/mycompany/projeuideneme/searchFrame.class
 com/mycompany/projeuideneme/SignUpPatient$4.class
 com/mycompany/projeuideneme/MainMenuDoctor$2.class
 com/mycompany/projeuideneme/DoctorEditPageJFrame$6.class
+com/mycompany/projeuideneme/SignUpSectionPage$6.class
 com/mycompany/projeuideneme/clinicEditPageJFrame$3.class
 com/mycompany/projeuideneme/SignUpSectionPage$5.class
+com/mycompany/projeuideneme/Appointment.class
 com/mycompany/projeuideneme/PharmacyDisplayJFrame$1.class
 com/mycompany/projeuideneme/PatientEditPageJFrame$7.class
 com/mycompany/projeuideneme/SignUpPatient.class
@@ -52,10 +58,12 @@ com/mycompany/projeuideneme/MainMenuDoctor$1.class
 com/mycompany/projeuideneme/SignUpSectionPage$4.class
 com/mycompany/projeuideneme/Listing.class
 com/mycompany/projeuideneme/PatientEditPageJFrame$1.class
+com/mycompany/projeuideneme/Patient.class
 com/mycompany/projeuideneme/SignUpSectionPage$1.class
 com/mycompany/projeuideneme/clinicEditPageJFrame$7.class
 patienteditpage/PatientEditPage.class
 com/mycompany/projeuideneme/clinicEditPageJFrame$4.class
+com/mycompany/projeuideneme/UIDeneme$5.class
 com/mycompany/projeuideneme/appointments_clinic$1.class
 com/mycompany/projeuideneme/SignUpPatient$7.class
 com/mycompany/projeuideneme/MainMenuPatient$1.class
@@ -100,7 +108,6 @@ com/mycompany/projeuideneme/appointments_clinic.class
 com/mycompany/projeuideneme/ClinicEditPage.class
 com/mycompany/projeuideneme/clinicEditPageJFrame$6.class
 com/mycompany/projeuideneme/MainMenuClinic$3.class
-com/mycompany/projeuideneme/Account.class
 com/mycompany/projeuideneme/SignUpDoctorPage$1.class
 com/mycompany/projeuideneme/AccountChooseJFrame.class
 com/mycompany/projeuideneme/appointments_clinic$2.class

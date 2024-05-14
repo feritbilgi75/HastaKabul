@@ -9,5 +9,8 @@ package com.mycompany.projeuideneme;
  * @author aslikanber
  */
 public class Patient {
+    private String name, surname, email, password, gender, city, disctrict;
+    private long phoneNo;
+    private int age;
     
 }

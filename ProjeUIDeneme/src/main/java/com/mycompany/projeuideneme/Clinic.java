@@ -9,5 +9,6 @@ package com.mycompany.projeuideneme;
  * @author aslikanber
  */
 public class Clinic {
-    
+    private String name, email, password, city, district;
+    private long phoneNo;
 }

@@ -38,21 +38,21 @@ public class SignUpSectionPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        login_section_button.setBackground(new java.awt.Color(255, 255, 255));
         login_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         login_section_button.setBorderPainted(false);
         getContentPane().add(login_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, 230, 50));
 
-        signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 40, 210, 50));
 
-        search_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        search_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        search_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_textfieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(search_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 540, 70));
 
-        search_button.setBackground(new java.awt.Color(255, 255, 255));
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
         search_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,7 +61,6 @@ public class SignUpSectionPage extends javax.swing.JFrame {
         });
         getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, -1, -1));
 
-        clinicSignUp.setBackground(new java.awt.Color(255, 255, 255));
         clinicSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/ClinicSignUp.png"))); // NOI18N
         clinicSignUp.setBorderPainted(false);
         clinicSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +70,6 @@ public class SignUpSectionPage extends javax.swing.JFrame {
         });
         getContentPane().add(clinicSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 540, 290, 70));
 
-        patientSignUp.setBackground(new java.awt.Color(255, 255, 255));
         patientSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/PatientSignUp.png"))); // NOI18N
         patientSignUp.setBorderPainted(false);
         patientSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +79,6 @@ public class SignUpSectionPage extends javax.swing.JFrame {
         });
         getContentPane().add(patientSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 540, 290, 70));
 
-        doktorSignUp.setBackground(new java.awt.Color(255, 255, 255));
         doktorSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/DoktorSignUp.png"))); // NOI18N
         doktorSignUp.setBorderPainted(false);
         doktorSignUp.addActionListener(new java.awt.event.ActionListener() {
@@ -102,16 +99,26 @@ public class SignUpSectionPage extends javax.swing.JFrame {
     }//GEN-LAST:event_search_buttonActionPerformed
 
     private void doktorSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doktorSignUpActionPerformed
-        // TODO add your handling code here:
+        SignUpDoctorPage doctorSignUp = new SignUpDoctorPage();
+        doctorSignUp.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_doktorSignUpActionPerformed
 
     private void clinicSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clinicSignUpActionPerformed
-        // TODO add your handling code here:
+        SignUpClinicPage clinicSignUpPage = new SignUpClinicPage();
+        clinicSignUpPage.setVisible(true);
+        setVisible(false);     
     }//GEN-LAST:event_clinicSignUpActionPerformed
 
     private void patientSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientSignUpActionPerformed
-        // TODO add your handling code here:
+        SignUpPatient patientSignUp = new SignUpPatient();
+        patientSignUp.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_patientSignUpActionPerformed
+
+    private void search_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_textfieldActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,10 +1,12 @@
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Appointment.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_clinic.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctorDbConnection.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/doctor.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/MainMenuPatient.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Clinic.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/LoginAccountChoose.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/SignUpClinicPage.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/appointments_doctor.java
-/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Account.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/MainMenuClinic.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/clinicEditPageJFrame.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PharmacyDisplayJFrame.java
@@ -20,6 +22,7 @@
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/PatientEditPageJFrame.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/DoctorEditPageJFrame.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/UIDeneme.java
+/Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Patient.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Pharmacy.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/Listing.java
 /Users/aslikanber/Desktop/HastaKabul/ProjeUIDeneme/src/main/java/com/mycompany/projeuideneme/searchResult.java
