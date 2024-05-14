@@ -7,6 +7,7 @@ package com.mycompany.projeuideneme;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JFrame;
 
 /**
  *
@@ -120,11 +121,21 @@ public class SignUpClinicPage extends javax.swing.JFrame {
         login_section_button.setBackground(new java.awt.Color(255, 255, 255));
         login_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         login_section_button.setBorderPainted(false);
+        login_section_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                login_section_buttonActionPerformed(evt);
+            }
+        });
         getContentPane().add(login_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, 230, 50));
 
         signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
+        signUp_section_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUp_section_buttonActionPerformed(evt);
+            }
+        });
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 40, 210, 50));
 
         doctors_textfield.setBackground(new java.awt.Color(255, 255, 255));
@@ -175,7 +186,27 @@ public class SignUpClinicPage extends javax.swing.JFrame {
         
         int phoneNumber = Integer.parseInt(communication_textfield.getText());
         insert(firstName, location,  phoneNumber, email, password, branches, doctors, insurance, about);
+        
+        
+        //Main menu constructor yapılacak(üyelik işlemleri için)
+        JFrame menu = new MainMenuClinic();
+        menu.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed
+
+    private void signUp_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_section_buttonActionPerformed
+        // TODO add your handling code here:
+        JFrame accChose = new AccountChooseJFrame();
+        accChose.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_signUp_section_buttonActionPerformed
+
+    private void login_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_section_buttonActionPerformed
+        // TODO add your handling code here:
+        JFrame accChose = new UIDeneme();
+        accChose.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_login_section_buttonActionPerformed
 
     private static void insert(String name, String location, int phoneNumber,String email, String password, String branches, String doctors, String insurance,  String about){
         Connection con = clinicDbConnection.connect();

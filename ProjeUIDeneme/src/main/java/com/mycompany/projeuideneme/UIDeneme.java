@@ -5,6 +5,7 @@
 package com.mycompany.projeuideneme;
 
 import java.awt.Image;
+import javax.swing.JFrame;
 
 /**
  *
@@ -68,6 +69,11 @@ public class UIDeneme extends javax.swing.JFrame {
         signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
+        signUp_section_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUp_section_buttonActionPerformed(evt);
+            }
+        });
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 40, -1, -1));
 
         passwordField.setBackground(new java.awt.Color(255, 255, 255));
@@ -89,8 +95,19 @@ public class UIDeneme extends javax.swing.JFrame {
 
     private void logIn_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_buttonActionPerformed
         // TODO add your handling code here:
+        //Login sonrası frame açacak contructor kurulduktan sonra küçük oynama gerek.
+        JFrame frame = new MainMenuPatient();
+        frame.setVisible(true);
+        setVisible(false);
        
     }//GEN-LAST:event_logIn_buttonActionPerformed
+
+    private void signUp_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_section_buttonActionPerformed
+        // TODO add your handling code here:
+        JFrame accChose = new AccountChooseJFrame();
+        accChose.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_signUp_section_buttonActionPerformed
 
     
     

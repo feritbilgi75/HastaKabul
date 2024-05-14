@@ -7,17 +7,18 @@ package com.mycompany.projeuideneme;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JFrame;
 
 /**
  *
  * @author feritbilgi
  */
-public class ClientSignUpPage extends javax.swing.JFrame {
+public class SignUpPatient extends javax.swing.JFrame {
 
     /**
      * Creates new form ClientSignUpPage
      */
-    public ClientSignUpPage() {
+    public SignUpPatient() {
         initComponents();
     }
 
@@ -116,6 +117,11 @@ public class ClientSignUpPage extends javax.swing.JFrame {
         login_section_button.setBackground(new java.awt.Color(255, 255, 255));
         login_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         login_section_button.setBorderPainted(false);
+        login_section_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                login_section_buttonActionPerformed(evt);
+            }
+        });
         getContentPane().add(login_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 230, 50));
 
         signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
@@ -170,11 +176,27 @@ public class ClientSignUpPage extends javax.swing.JFrame {
         }
         int phoneNumber = Integer.parseInt(phoneNumber_textField.getText());
         insert(firstName, lastName, gender, age, email, password, phoneNumber);
+        
+        
+        //Main menu constructor yapılacak(üyelik işlemleri için)
+        JFrame menu = new MainMenuPatient();
+        menu.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed
 
     private void signUp_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_section_buttonActionPerformed
         // TODO add your handling code here:
+        JFrame accChose = new AccountChooseJFrame();
+        accChose.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_signUp_section_buttonActionPerformed
+
+    private void login_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_section_buttonActionPerformed
+        // TODO add your handling code here:
+        JFrame accChose = new AccountChooseJFrame();
+        accChose.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_login_section_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,20 +215,21 @@ public class ClientSignUpPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClientSignUpPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClientSignUpPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClientSignUpPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClientSignUpPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SignUpPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClientSignUpPage().setVisible(true);
+                new SignUpPatient().setVisible(true);
             }
         });
     }
