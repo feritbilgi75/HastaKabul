@@ -4,6 +4,10 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 
 /**
@@ -17,8 +21,44 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
     /**
      * Creates new form clinicEditPageJFrame
      */
-    public clinicEditPageJFrame() {
+    
+    String email = "";
+    
+    public clinicEditPageJFrame(String emailString) {
         initComponents();
+        Connection con = clinicDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select * from clinics where email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, emailString);
+            email = emailString;
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
+            // String firstName = rs.getString(1);
+            // String statueOfDoctor = rs.getString("statue");
+            // String name = statueOfDoctor + " Dr " + firstName;
+            
+            // String branchOfDoctor = rs.getString("branch");
+            // doctorNameText.setText(name);
+            // bracnhText.setText(branchOfDoctor);
+            // locationText.setText("Ankara");
+            // jTextArea1.setText(rs.getString("about"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
     }
 
     /**
@@ -322,7 +362,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new clinicEditPageJFrame().setVisible(true);
+                new clinicEditPageJFrame(email).setVisible(true);
             }
         });
     }

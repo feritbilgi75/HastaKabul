@@ -4,6 +4,11 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author user
@@ -14,8 +19,43 @@ public class PharmacyDisplayJFrame extends javax.swing.JFrame {
     /**
      * Creates new form PharmacyDisplayJFrame
      */
-    public PharmacyDisplayJFrame() {
+    
+    String email = "";
+    public PharmacyDisplayJFrame(String emailString) {
         initComponents();
+        Connection con = patientDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select * from patients where email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, emailString);
+            email = emailString;
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
+            // String firstName = rs.getString(1);
+            // String statueOfDoctor = rs.getString("statue");
+            // String name = statueOfDoctor + " Dr " + firstName;
+            
+            // String branchOfDoctor = rs.getString("branch");
+            // doctorNameText.setText(name);
+            // bracnhText.setText(branchOfDoctor);
+            // locationText.setText("Ankara");
+            // jTextArea1.setText(rs.getString("about"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
     }
 
     /**

@@ -10,14 +10,56 @@
 
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class appointments_clinic extends javax.swing.JFrame {
         String email = "";
 
     /**
      * Creates new form appointments_clinic
      */
-    public appointments_clinic() {
+    
+    
+    public static String email = "";
+    
+    public appointments_clinic(String emailString) {
         initComponents();
+        Connection con = clinicDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select * from clinics where email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, emailString);
+            email = emailString;
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
+            // String firstName = rs.getString(1);
+            // String statueOfDoctor = rs.getString("statue");
+            // String name = statueOfDoctor + " Dr " + firstName;
+            
+            // String branchOfDoctor = rs.getString("branch");
+            // doctorNameText.setText(name);
+            // bracnhText.setText(branchOfDoctor);
+            // locationText.setText("Ankara");
+            // jTextArea1.setText(rs.getString("about"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
     }
 
     /**
@@ -143,7 +185,7 @@ public class appointments_clinic extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new appointments_clinic().setVisible(true);
+                new appointments_clinic(email).setVisible(true);
             }
         });
     }
