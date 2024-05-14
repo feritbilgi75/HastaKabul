@@ -21,36 +21,47 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
      * Creates new form PatientEditPageJFrame
      */
     
-    static String email = "";
+    String email = "";
     
     public PatientEditPageJFrame(String emailString) {
         initComponents();
-        Connection con = patientDbConnection.connect();
+        Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
         ResultSet rs = null;
+        email = emailString;
+        System.out.println(email);
+        System.out.println(emailString);
         
         try{
-            String sql = "Select * from patients where email = ?";
+            String sql = "Select * from patient where email = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
-            email = emailString;
+            
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
             while (rs.next()){
-                String firstName = rs.getString("name");
-                String surname = rs.getString("surname");
-                //int age = rs.getInt("age");
+                String firstName = rs.getString("firstName");
+                String surname = rs.getString("lastName");
+                int age = rs.getInt("age");
+                String gender = rs.getString("gender");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
-                //int phoneNumber = rs.getInt("phoneNumber");
+                int phoneNumber = rs.getInt("phoneNumber");
             
                 nameText.setText(firstName);
                 surnameText.setText(surname);
-                //ageText.setText(Integer.toString(age));
+                emailText.setText(email);
+                ageText.setText(age + "");
                 passwordField.setText(password);
                 passwordField2.setText(password);
-                //phoneField.setText(phoneNumber);
+                phoneField.setText(phoneNumber + "");
+                if(gender.equals("Erkek")){
+                    jRadioButton1.isSelected();
+                }
+                else{
+                    jRadioButton2.isSelected();
+                }
             }
             
             
@@ -121,6 +132,11 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         getContentPane().add(surnameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 540, 60));
 
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 130, 40));
 
         buttonGroup1.add(jRadioButton2);
@@ -200,36 +216,144 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Bilgileri database'de girilenlere göre değiştirerek ana sayfaya döner (Constructor ayarlanmalı).
         
-        Connection con = patientDbConnection.connect();
+        Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
-                     
-        //Update kısmı
-        
-        
-        
-        try{
-            String sql = "UPDATE users set firstName = ? lastname = ? email = ? password = ? WHERE email = ?";
-            //bu üstteki kısmı genişleterek belli if koşullarıyla uyarlayabilirsin.
+
+        // Cinsiyet belirleme
+        String gender = "";
+        if (jRadioButton1.isSelected()) {
+            gender = "Erkek";
+        } else if (jRadioButton2.isSelected()) {
+            gender = "Kadın";
+        }
+
+        // Şifre kontrolü
+        String password1 = passwordField.getText();
+        String password2 = passwordField2.getText();
+        String actualPassword = "";
+
+        if (password1.equals(password2)) {
+            actualPassword = password1;
+        } else {
+            JOptionPane.showMessageDialog(null, "Şifre aynı olmak zorunda");
+            throw new IllegalArgumentException();
+        }
+
+        // SQL sorgusu
+        String sql = "UPDATE patient SET name = ?, surname = ?, gender = ?, age = ?, email = ?, password = ?, phoneNo = ? WHERE email = ?";
+
+        try {
             ps = con.prepareStatement(sql);
-            
+
+            // Parametreleri ayarlama
             ps.setString(1, nameText.getText());
             ps.setString(2, surnameText.getText());
-            ps.setString(3, emailText.getText());
+            ps.setString(3, gender);
             ps.setInt(4, Integer.parseInt(ageText.getText()));
-            ps.setString(5, email);
+            ps.setString(5, emailText.getText());
+            ps.setString(6, actualPassword);
+            ps.setString(7, phoneField.getText()); // Assuming phone number is stored as a String
+            ps.setString(8, email); // WHERE clause için email
+
+            // Sorguyu çalıştırma
+            ps.executeUpdate();
+            System.out.println("Data has been updated");
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    
+
+        email = emailText.getText();
+
+        JFrame frame = new MainMenuPatient(email);
+        frame.setVisible(true);
+        setVisible(true);
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
+        Connection con = patientDbConnection.connect();
+        PreparedStatement ps = null;
+             */        
+        //Update kısmı
+        /*
+        String gender = "";
+            if (jRadioButton1.isSelected()){
+                gender = "Erkek";
+            }
+            else if (jRadioButton2.isSelected()){
+                gender = "Kadın";
+            }
             String password1 = passwordField.getText();
             String password2 = passwordField2.getText();
+            String actualPassword = "";
 
             if (password1.equals(password2)){
-                ps.setString(6, surnameText.getText());
+                actualPassword = password1;
 
             }
             else{
                 JOptionPane.showMessageDialog(null, "Şifre aynı olmak zorunda");
                 throw new IllegalArgumentException();
             }
+        
+        String sql = "UPDATE patients set firstName = '" + nameText.getText() +"',"+
+                " lastName = '" + surnameText.getText() + "'," +
+                " gender = " + gender + "," +
+                " age = '" + Integer.parseInt(ageText.getText()) + "'," +
+                " email = '" + emailText.getText() + "'," +
+                " password = '" + actualPassword + "'," +
+                " phoneNumber = '" + Integer.parseInt(phoneField.getText()) +
+                
+                "' where email = ?";
+        
+        try{
+            
+            //bu üstteki kısmı genişleterek belli if koşullarıyla uyarlayabilirsin.
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1, email);
+            */
+            /*
+            ps.setString(2, surnameText.getText());
+            
+            
+            ps.setString(3, gender);
+            ps.setInt(4, );
+            ps.setString(5, email);
+            
             
             ps.setInt(7, Integer.parseInt(phoneField.getText()));
+            */
+            /*
             ps.execute();
             System.out.println("Data has been updated");
         } catch(SQLException e){
@@ -237,10 +361,19 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         }
         
         
+        System.out.println("OLDU AMK GOOOOOOOOOL");
+        
+        email = emailText.getText();
+        
         JFrame frame = new MainMenuPatient(email);
         frame.setVisible(true);
         setVisible(true);
+            */
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
