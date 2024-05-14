@@ -4,7 +4,12 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import javax.swing.JTextField;
+import java.sql.*;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -18,7 +23,33 @@ public class Patient {
     // search method: take info from database, display on panel for each result, name is a button -> doctors page
     protected static void search(JTextField text, Patient patient)
     {
+        String searched = text.getText();
+        String url = ""; // the sql url
+        String sql = "SELECT * FROM doctors WHERE name = ?";
         
+        try (Connection con = DriverManager.getConnection(url)){
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1, searched);
+            
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while (resultSet.next()) // while doctor is found in the table
+            {
+                String branch = resultSet.getString("Branch");
+                String clinicName = resultSet.getString("Clinic Name");
+                byte[] imageData = resultSet.getBytes("Image");
+                ByteArrayInputStream bis = new ByteArrayInputStream(imageData);
+                BufferedImage img = ImageIO.read(bis);
+                
+                // TO BE CONTINUED
+                int rowID = resultSet.getRow(); // INSALLAH
+                doctor.displayDoctor(clinicName, branch, clinicName, img, rowID);
+            }
+            
+            
+        } catch (SQLException | IOException e) {
+            System.out.print(e.getMessage());
+        }
     }
     
 }
