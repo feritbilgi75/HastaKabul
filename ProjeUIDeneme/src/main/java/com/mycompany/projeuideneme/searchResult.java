@@ -9,6 +9,7 @@ package com.mycompany.projeuideneme;
  * @author aslikanber
  */
 public class searchResult extends javax.swing.JPanel {
+        String email = "";
 
     /**
      * Creates new form searchResult

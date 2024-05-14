@@ -14,6 +14,7 @@ import java.sql.SQLException;
  * @author feritbilgi
  */
 public class Listing extends javax.swing.JPanel {
+        String email = "";
 
     /**
      * Creates new form Listing
@@ -29,6 +30,7 @@ public class Listing extends javax.swing.JPanel {
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             rs = ps.executeQuery();
+            this.email = emailString;
             
             //we are reading one row, so no need to loop
             String firstName = rs.getString(1);

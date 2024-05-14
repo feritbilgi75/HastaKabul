@@ -139,7 +139,6 @@
                           <Component id="jButton4" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jButton5" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                       <Component id="jButton6" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="70" max="32767" attributes="0"/>
@@ -197,9 +196,7 @@
                       </Group>
                       <Component id="jScrollPane1" min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="96" max="32767" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace pref="147" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -219,7 +216,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Klinik Adi;"/>
+            <Property name="text" type="java.lang.String" value="Klinik Adi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -263,11 +260,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField5">
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Duzenle"/>
-          </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>

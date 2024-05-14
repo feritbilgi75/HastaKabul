@@ -11,6 +11,7 @@ import javax.swing.JFrame;
  * @author feritbilgi
  */
 public class SignUpSectionPage extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form AcoountChoosement

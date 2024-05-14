@@ -12,7 +12,7 @@ package com.mycompany.projeuideneme;
 
 
 public class appointments_doctor extends javax.swing.JFrame {
-
+    String email = "";
     /**
      * Creates new form appointments_doctor
      */

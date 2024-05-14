@@ -14,6 +14,7 @@ import javax.swing.JFrame;
  * @author feritbilgi
  */
 public class SignUpPatient extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form ClientSignUpPage

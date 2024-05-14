@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @author feritbilgi
  */
 public class UIDeneme extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form UIDeneme
