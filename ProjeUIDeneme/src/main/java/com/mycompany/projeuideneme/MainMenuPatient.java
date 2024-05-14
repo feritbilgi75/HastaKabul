@@ -8,7 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
 import javax.swing.JFrame;
 
 /**
@@ -17,11 +20,18 @@ import javax.swing.JFrame;
  */
 public class MainMenuPatient extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+ 
+    private String email = "";
+    
+    public MainMenuPatient(){}
+=======
     /**
      * Creates new form MainMenuPatient
      */
     
     String email = "";
+>>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
     
     public MainMenuPatient(String emailString) {
         initComponents();
@@ -30,7 +40,15 @@ public class MainMenuPatient extends javax.swing.JFrame {
         ResultSet rs = null;
         
         try{
+<<<<<<< HEAD
+<<<<<<< HEAD
+            String sql = "Select * from doctors where email = ?";
+=======
+            String sql = "Select * from patients where email = ?";
+>>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
+=======
             String sql = "Select * from patient where email = ?";
+>>>>>>> 42709109915da6a22539e17887bc267673bd7631
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             email = emailString;

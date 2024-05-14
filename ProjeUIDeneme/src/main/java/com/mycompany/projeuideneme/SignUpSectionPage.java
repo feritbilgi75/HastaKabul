@@ -4,6 +4,8 @@
  */
 package com.mycompany.projeuideneme;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author feritbilgi
@@ -41,6 +43,11 @@ public class SignUpSectionPage extends javax.swing.JFrame {
 
         login_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         login_section_button.setBorderPainted(false);
+        login_section_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                login_section_buttonActionPerformed(evt);
+            }
+        });
         getContentPane().add(login_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 40, 230, 50));
 
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
@@ -120,6 +127,12 @@ public class SignUpSectionPage extends javax.swing.JFrame {
     private void search_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_textfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_search_textfieldActionPerformed
+
+    private void login_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_section_buttonActionPerformed
+        JFrame accChose = new UIDeneme();
+        accChose.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_login_section_buttonActionPerformed
 
     /**
      * @param args the command line arguments
