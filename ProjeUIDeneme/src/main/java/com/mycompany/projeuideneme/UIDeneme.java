@@ -225,13 +225,13 @@ public class UIDeneme extends javax.swing.JFrame {
         
         
         else if (patientLogin.isSelected()){
-            Connection con = patientDbConnection.connect();
+            Connection con = asliDbConnection.connect();
             PreparedStatement ps = null;
             ResultSet rs = null;
             accType = "ptn";
             
             try{
-            String sql = "Select * from patients where email = ?";
+            String sql = "Select * from patient where email = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             
@@ -280,14 +280,14 @@ public class UIDeneme extends javax.swing.JFrame {
         }
         
         else if (clinicLogin.isSelected()){
-            Connection con = patientDbConnection.connect();
+            Connection con = clinicDbConnection.connect();
             PreparedStatement ps = null;
             ResultSet rs = null;
             
             accType = "cln";
             
             try{
-            String sql = "Select * from patients where email = ?";
+            String sql = "Select * from clinics where email = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             

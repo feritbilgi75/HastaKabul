@@ -25,7 +25,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
     
     public PatientEditPageJFrame(String emailString) {
         initComponents();
-        Connection con = patientDbConnection.connect();
+        Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
         ResultSet rs = null;
         email = emailString;
@@ -33,7 +33,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         System.out.println(emailString);
         
         try{
-            String sql = "Select * from patients where email = ?";
+            String sql = "Select * from patient where email = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             
@@ -44,6 +44,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
                 String firstName = rs.getString("firstName");
                 String surname = rs.getString("lastName");
                 int age = rs.getInt("age");
+                String gender = rs.getString("gender");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 int phoneNumber = rs.getInt("phoneNumber");
@@ -55,6 +56,12 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
                 passwordField.setText(password);
                 passwordField2.setText(password);
                 phoneField.setText(phoneNumber + "");
+                if(gender.equals("Erkek")){
+                    jRadioButton1.isSelected();
+                }
+                else{
+                    jRadioButton2.isSelected();
+                }
             }
             
             
@@ -209,7 +216,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Bilgileri database'de girilenlere göre değiştirerek ana sayfaya döner (Constructor ayarlanmalı).
         
-        Connection con = patientDbConnection.connect();
+        Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
 
         // Cinsiyet belirleme
@@ -233,7 +240,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         }
 
         // SQL sorgusu
-        String sql = "UPDATE patients SET firstName = ?, lastName = ?, gender = ?, age = ?, email = ?, password = ?, phoneNumber = ? WHERE email = ?";
+        String sql = "UPDATE patient SET name = ?, surname = ?, gender = ?, age = ?, email = ?, password = ?, phoneNo = ? WHERE email = ?";
 
         try {
             ps = con.prepareStatement(sql);
@@ -270,7 +277,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
             }
         }
 
-        System.out.println("OLDU AMK GOOOOOOOOOL");
+    
 
         email = emailText.getText();
 

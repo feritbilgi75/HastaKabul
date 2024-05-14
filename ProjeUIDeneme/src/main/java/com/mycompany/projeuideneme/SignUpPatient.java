@@ -207,10 +207,10 @@ public class SignUpPatient extends javax.swing.JFrame {
     }
     
     private static void insert(String firstName, String lastName, String gender, int age, String email, String password, int phoneNumber){
-        Connection con = patientDbConnection.connect();
+        Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
         try{
-            String sql = "INSERT INTO patients(firstName, lastName, gender, age, email, password, phoneNumber) VALUES(?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO patient(name, surname, gender, age, email, password, phoneNo) VALUES(?,?,?,?,?,?,?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, firstName);
             ps.setString(2, lastName);
