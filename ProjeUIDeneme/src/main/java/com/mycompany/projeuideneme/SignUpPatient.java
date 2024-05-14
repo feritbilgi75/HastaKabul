@@ -50,13 +50,7 @@ public class SignUpPatient extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        name_textfield1.setBackground(new java.awt.Color(255, 255, 255));
-        name_textfield1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(name_textfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 540, 70));
-
-        surname_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        surname_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(surname_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 540, 70));
 
         genderPatient.add(man);
@@ -74,24 +68,11 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(woman, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 20, 20));
-
-        age_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        age_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(age_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 540, 70));
-
-        email_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        email_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(email_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 540, 70));
-
-        password_field1.setBackground(new java.awt.Color(255, 255, 255));
-        password_field1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(password_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 540, 70));
+        getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 800, 540, 80));
 
-        password_field.setBackground(new java.awt.Color(255, 255, 255));
-        password_field.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 820, 540, 70));
-
-        signUp_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_button.setBorderPainted(false);
         signUp_button.addActionListener(new java.awt.event.ActionListener() {
@@ -100,12 +81,8 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(signUp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 900, 290, 70));
-
-        search_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        search_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(search_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 540, 70));
 
-        search_button.setBackground(new java.awt.Color(255, 255, 255));
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
         search_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +91,6 @@ public class SignUpPatient extends javax.swing.JFrame {
         });
         getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, -1, -1));
 
-        login_section_button.setBackground(new java.awt.Color(255, 255, 255));
         login_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         login_section_button.setBorderPainted(false);
         login_section_button.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +100,6 @@ public class SignUpPatient extends javax.swing.JFrame {
         });
         getContentPane().add(login_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 230, 50));
 
-        signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
         signUp_section_button.addActionListener(new java.awt.event.ActionListener() {
@@ -133,13 +108,10 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 210, 50));
-
-        phoneNumber_textField.setBackground(new java.awt.Color(255, 255, 255));
-        phoneNumber_textField.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(phoneNumber_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 540, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Menu_Patient.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1006));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, -1, 1010));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
