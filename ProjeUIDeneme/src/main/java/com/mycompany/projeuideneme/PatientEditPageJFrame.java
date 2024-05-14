@@ -4,6 +4,10 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 
 /**
@@ -15,8 +19,44 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
     /**
      * Creates new form PatientEditPageJFrame
      */
-    public PatientEditPageJFrame() {
+    
+    String email = "";
+    
+    public PatientEditPageJFrame(String emailString) {
         initComponents();
+        Connection con = patientDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select * from patients where email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, emailString);
+            email = emailString;
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
+            // String firstName = rs.getString(1);
+            // String statueOfDoctor = rs.getString("statue");
+            // String name = statueOfDoctor + " Dr " + firstName;
+            
+            // String branchOfDoctor = rs.getString("branch");
+            // doctorNameText.setText(name);
+            // bracnhText.setText(branchOfDoctor);
+            // locationText.setText("Ankara");
+            // jTextArea1.setText(rs.getString("about"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
     }
 
     /**
@@ -30,16 +70,16 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        nameText = new javax.swing.JTextField();
+        surnameText = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        ageText = new javax.swing.JTextField();
+        emailText = new javax.swing.JTextField();
+        passwordField = new javax.swing.JTextField();
+        passwordField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
+        phoneField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,16 +95,16 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 240, 210));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nameText.setBackground(new java.awt.Color(255, 255, 255));
+        nameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 540, 60));
+        getContentPane().add(nameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 540, 60));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 540, 60));
+        surnameText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(surnameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 540, 60));
 
         buttonGroup1.add(jRadioButton1);
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 130, 40));
@@ -77,27 +117,27 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, -1, -1));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        ageText.setBackground(new java.awt.Color(255, 255, 255));
+        ageText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                ageTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 530, 60));
+        getContentPane().add(ageText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 540, 60));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        emailText.setBackground(new java.awt.Color(255, 255, 255));
+        emailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                emailTextActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 530, 60));
+        getContentPane().add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 540, 60));
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 700, 530, 60));
+        passwordField.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 540, 60));
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 820, 520, 60));
+        passwordField2.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 820, 540, 60));
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/EditButton.png"))); // NOI18N
@@ -108,8 +148,8 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 910, 280, 60));
 
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 200, 530, 60));
+        phoneField.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 200, 530, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Edit_Menu_Patient.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -118,26 +158,26 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameTextActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void ageTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_ageTextActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_emailTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //Editlemeden ana sayfaya döner
-        JFrame frame = new MainMenuPatient();
+        JFrame frame = new MainMenuPatient(email);
         frame.setVisible(true);
         setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -146,7 +186,27 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Bilgileri database'de girilenlere göre değiştirerek ana sayfaya döner (Constructor ayarlanmalı).
         
-        JFrame frame = new MainMenuPatient();
+        Connection con = patientDbConnection.connect();
+        PreparedStatement ps = null;
+                     
+        //Update kısmı
+        
+        
+        
+        try{
+            String sql = "UPDATE users set firstName = ? WHERE email = ?";
+            //bu üstteki kısmı genişleterek belli if koşullarıyla uyarlayabilirsin.
+            ps = con.prepareStatement(sql);
+            ps.setString(1, "Ferit2İsim");
+            ps.setString(2, "feritbilgi@gmail.com");
+            ps.execute();
+            System.out.println("Data has been updated");
+        } catch(SQLException e){
+            System.out.println(e.toString());
+        }
+        
+        
+        JFrame frame = new MainMenuPatient(email);
         frame.setVisible(true);
         setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -187,18 +247,18 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ageText;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField emailText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField nameText;
+    private javax.swing.JTextField passwordField;
+    private javax.swing.JTextField passwordField2;
+    private javax.swing.JTextField phoneField;
+    private javax.swing.JTextField surnameText;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,6 +13,7 @@ import java.sql.SQLException;
  * @author JUSTPOSOF
  */
 public class clinicDbConnection {
+        String email = "";
     public static Connection connect(){
         Connection con = null;
         try {

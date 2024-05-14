@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 
 
 public class DoctorEditPageJFrame extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form DoctorEditPageJFrame

@@ -9,6 +9,7 @@ package com.mycompany.projeuideneme;
  * @author aslikanber
  */
 public class searchFrame extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form searchFrame
@@ -76,17 +77,14 @@ public class searchFrame extends javax.swing.JFrame {
             }
         });
 
-        appointmentsButton.setIcon(new javax.swing.ImageIcon("/Users/aslikanber/Desktop/User_Button.png")); // NOI18N
         appointmentsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appointmentsButtonActionPerformed(evt);
             }
         });
 
-        logoLabel.setIcon(new javax.swing.ImageIcon("/Users/aslikanber/Desktop/MainMenu (1).png")); // NOI18N
         logoLabel.setText("jLabel2");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/Users/aslikanber/Desktop/SearchIcon.png")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -123,12 +121,12 @@ public class searchFrame extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(appointmentsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(searchPanelLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(patientAccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(insuranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(searchPanelLayout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(insuranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
 

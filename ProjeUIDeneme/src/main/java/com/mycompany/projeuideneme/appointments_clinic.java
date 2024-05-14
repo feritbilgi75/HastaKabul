@@ -11,6 +11,7 @@
 package com.mycompany.projeuideneme;
 
 public class appointments_clinic extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form appointments_clinic

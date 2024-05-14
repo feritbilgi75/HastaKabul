@@ -11,6 +11,7 @@ import javax.swing.JFrame;
  * @author user
  */
 public class AccountChooseJFrame extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form AccountChooseJFrame

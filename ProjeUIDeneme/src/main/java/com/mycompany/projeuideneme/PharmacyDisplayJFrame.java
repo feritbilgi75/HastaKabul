@@ -9,6 +9,7 @@ package com.mycompany.projeuideneme;
  * @author user
  */
 public class PharmacyDisplayJFrame extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form PharmacyDisplayJFrame
@@ -26,7 +27,6 @@ public class PharmacyDisplayJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -50,13 +50,11 @@ public class PharmacyDisplayJFrame extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1440, 1024));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Frame 2 (2).png")));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +120,9 @@ public class PharmacyDisplayJFrame extends javax.swing.JFrame {
         jLabel13.setText("13");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 920, 310, 30));
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 50, 130, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Frame 2 (2).png")));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

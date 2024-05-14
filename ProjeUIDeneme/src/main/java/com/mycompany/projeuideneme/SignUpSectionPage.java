@@ -9,6 +9,7 @@ package com.mycompany.projeuideneme;
  * @author feritbilgi
  */
 public class SignUpSectionPage extends javax.swing.JFrame {
+        String email = "";
 
     /**
      * Creates new form AcoountChoosement
