@@ -41,12 +41,10 @@ public class Patient {
                 ByteArrayInputStream bis = new ByteArrayInputStream(imageData);
                 BufferedImage img = ImageIO.read(bis);
                 
-                // TO BE CONTINUED
                 int rowID = resultSet.getRow(); // INSALLAH
                 doctor.displayDoctor(clinicName, branch, clinicName, img, rowID);
             }
-            
-            
+            con.close();  
         } catch (SQLException | IOException e) {
             System.out.print(e.getMessage());
         }
