@@ -4,8 +4,12 @@
  */
 package com.mycompany.projeuideneme;
 
-import java.awt.Image;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,52 +35,26 @@ public class UIDeneme extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        email_textField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        passwordLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         signUp_section_button = new javax.swing.JButton();
         logIn_section_button = new javax.swing.JButton();
+        emailLabel = new javax.swing.JLabel();
+        email_textField = new javax.swing.JTextField();
+        passwordLabel = new javax.swing.JLabel();
+        passwordField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        email_textField.setSelectionColor(new java.awt.Color(255, 255, 255));
-        email_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_textFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 533, 480, 60));
-
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
-            }
-        });
-        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 480, 60));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        emailLabel.setBackground(new java.awt.Color(204, 204, 204));
-        emailLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
-        emailLabel.setForeground(java.awt.Color.red);
-        emailLabel.setText("Email");
-        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 140, 60));
-
-        passwordLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
-        passwordLabel.setForeground(java.awt.Color.red);
-        passwordLabel.setText("Password");
-        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 620, 170, 40));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LOGO_1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 250, 260));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 250, 260));
 
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
@@ -85,7 +63,7 @@ public class UIDeneme extends javax.swing.JFrame {
                 signUp_section_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 780, -1, -1));
+        jPanel1.add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 690, -1, -1));
 
         logIn_section_button.setForeground(new java.awt.Color(255, 255, 255));
         logIn_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
@@ -96,7 +74,33 @@ public class UIDeneme extends javax.swing.JFrame {
                 logIn_section_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 780, 220, 50));
+        jPanel1.add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 690, 220, 50));
+
+        emailLabel.setBackground(new java.awt.Color(204, 204, 204));
+        emailLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
+        emailLabel.setForeground(java.awt.Color.red);
+        emailLabel.setText("Email");
+        jPanel1.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 140, 60));
+
+        email_textField.setSelectionColor(new java.awt.Color(255, 255, 255));
+        email_textField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                email_textFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 480, 60));
+
+        passwordLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
+        passwordLabel.setForeground(java.awt.Color.red);
+        passwordLabel.setText("Password");
+        jPanel1.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 170, 40));
+
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
+        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, 480, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1450, 1030));
 
@@ -119,9 +123,62 @@ public class UIDeneme extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void logIn_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_section_buttonActionPerformed
-        JFrame frame = new MainMenuPatient();
-        frame.setVisible(true);
-        setVisible(false);
+        String emailString = email_textField.getText().toString();
+    
+    
+        Connection con = patientDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        boolean equal = false;
+        
+        try{
+            String sql = "Select * from patients where email = ?";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, emailString);
+            
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
+            // String firstName = rs.getString(1);
+            // String statueOfDoctor = rs.getString("statue");
+            // String name = statueOfDoctor + " Dr " + firstName;
+            char[] passwordArray = passwordField.getPassword();
+            String password = "";
+            for (char c : passwordArray){
+                password += c;
+            }
+            String actualPassword = rs.getString("password");
+            if (password.equals(actualPassword)){
+                equal = true;
+            }
+            
+            // String branchOfDoctor = rs.getString("branch");
+            // doctorNameText.setText(name);
+            // bracnhText.setText(branchOfDoctor);
+            // locationText.setText("Ankara");
+            // jTextArea1.setText(rs.getString("about"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
+        
+        if (equal == true){
+           JFrame frame = new MainMenuPatient(email_textField.getText().toString());
+           frame.setVisible(true);
+           setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Yanlış şifre girdiniz.");
+        }
     }//GEN-LAST:event_logIn_section_buttonActionPerformed
 
     
