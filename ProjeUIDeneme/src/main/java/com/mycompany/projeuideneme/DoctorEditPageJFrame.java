@@ -62,7 +62,6 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1440, 1024));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LOGO 2.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,35 +81,19 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 120, 20));
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 540, 70));
-
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 540, 60));
-
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 530, 70));
-
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 530, 60));
-
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 540, 60));
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
             }
         });
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 820, 540, 60));
-
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, 530, 60));
-
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 540, 70));
 
         buttonGroup2.add(jRadioButton3);
@@ -124,14 +107,9 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
 
         buttonGroup2.add(jRadioButton6);
         getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 400, 110, 30));
-
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, 530, 60));
-
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 590, 530, 60));
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField11ActionPerformed(evt);
@@ -139,8 +117,8 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 730, 530, 150));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/resources/ui_component_assets/EditButton.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/EditButton.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -148,13 +126,11 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 920, 280, 60));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/UploadPhotoButton.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 920, 270, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/editMenuDoctor.png"))); // NOI18N
-        jLabel1.setMinimumSize(new java.awt.Dimension(1440, 1024));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1440, 1024));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         pack();

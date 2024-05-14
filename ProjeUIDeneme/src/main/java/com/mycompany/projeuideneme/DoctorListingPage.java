@@ -12,9 +12,10 @@ public class DoctorListingPage extends javax.swing.JFrame {
 
     /**
      * Creates new form DoctorListingPage
+     * @param rowID
      */
-    public DoctorListingPage() {
-        initComponents();
+    public DoctorListingPage(int rowID) {
+        //initComponents();
     }
 
     /**
@@ -188,11 +189,13 @@ public class DoctorListingPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        /*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DoctorListingPage().setVisible(true);
             }
         });
+        */
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
