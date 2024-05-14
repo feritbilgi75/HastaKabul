@@ -151,7 +151,7 @@ public class SignUpPatient extends javax.swing.JFrame {
         
         
         //Main menu constructor yapılacak(üyelik işlemleri için)
-        JFrame menu = new MainMenuPatient();
+        JFrame menu = new MainMenuPatient(email);
         menu.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed
