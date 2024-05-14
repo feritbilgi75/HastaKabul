@@ -4,6 +4,8 @@
  */
 package com.mycompany.projeuideneme;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author user
@@ -56,7 +58,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1440, 1024));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design/LOGO 2.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LOGO 2.png"))); // NOI18N
         jButton1.setPreferredSize(new java.awt.Dimension(130, 130));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +68,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
 
         jTextField1.setPreferredSize(new java.awt.Dimension(1440, 128));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design/🦆 icon _magnifying glass_.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon_magnifying_glass.png"))); // NOI18N
 
         jButton3.setPreferredSize(new java.awt.Dimension(119, 35));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +117,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Klinik Adı");
+        jLabel1.setText("Klinik Adi;");
 
         jLabel2.setText("Telefon");
 
@@ -125,9 +127,9 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Fotoğraflar");
+        jLabel3.setText("Fotograflar");
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design/+.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/+.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -144,9 +146,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Adres");
 
-        jTextField5.setText("jTextField5");
-
-        jButton5.setText("Düzenle");
+        jButton5.setText("Duzenle");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -161,7 +161,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        jLabel6.setText("Doktor Çıkar");
+        jLabel6.setText("Doktorlar");
 
         jLabel7.setText("Doktor Ekle");
 
@@ -178,7 +178,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable2);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design/SignUp Button.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp Button_1.png"))); // NOI18N
         jButton6.setPreferredSize(new java.awt.Dimension(270, 47));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -246,7 +246,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(jButton5)
                 .addGap(26, 26, 26))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,6 +263,9 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        JFrame frame = new MainMenuClinic();
+        frame.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

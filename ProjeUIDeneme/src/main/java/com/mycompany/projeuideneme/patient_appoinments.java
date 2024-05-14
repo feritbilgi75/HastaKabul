@@ -43,7 +43,7 @@ public class patient_appoinments extends javax.swing.JFrame {
         jTextField1.setBorder(null);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 52, 430, 30));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon _magnifying glass_.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon_magnifying_glass.png"))); // NOI18N
         jButton1.setBorder(null);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 43, 50, 40));
 
