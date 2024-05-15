@@ -43,7 +43,7 @@ public class Clinic {
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                ClinicListingPage newPage = new ClinicListingPage(rowID);
+                ClinicDisplay newPage = new ClinicDisplay(rowID);
                 newPage.setVisible(true);
             }
         });
