@@ -223,7 +223,7 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         
         
         //Main menu constructor yapılacak(üyelik işlemleri için)
-        JFrame menu = new MainMenuDoctor();
+        JFrame menu = new MainMenuDoctor(email);
         menu.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed

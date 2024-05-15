@@ -23,6 +23,7 @@ public class appointments_doctor extends javax.swing.JFrame {
      */
     
     String email = "";
+    static String staticMail = "";
     public appointments_doctor(String emailString) {
         initComponents();
         Connection con = doctorDbConnection.connect();
@@ -145,7 +146,7 @@ public class appointments_doctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new appointments_doctor().setVisible(true);
+                new appointments_doctor(staticMail).setVisible(true);
             }
         });
     }

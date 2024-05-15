@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +24,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
      */
     
     String email = "";
+    static String staticMail = "";
     
     public clinicEditPageJFrame(String emailString) {
         initComponents();
@@ -35,6 +37,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             email = emailString;
+            staticMail = emailString;
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
@@ -76,16 +79,21 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        clinicName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        comField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jTextField5 = new javax.swing.JTextField();
+=======
+        addressField = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+>>>>>>> a6dfc04d3e3e43574090435ba3f3b437dcbe6f4b
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -151,9 +159,9 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 120));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        clinicName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                clinicNameActionPerformed(evt);
             }
         });
 
@@ -161,9 +169,9 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Telefon");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        comField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                comFieldActionPerformed(evt);
             }
         });
 
@@ -178,9 +186,9 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
 
         jLabel4.setText("E-mail");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        emailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                emailFieldActionPerformed(evt);
             }
         });
 
@@ -232,13 +240,13 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
                 .addGap(130, 130, 130)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                        .addComponent(addressField, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField4)
+                        .addComponent(emailField)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField3)
+                        .addComponent(comField)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField2)
+                        .addComponent(clinicName)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,15 +271,15 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(clinicName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -280,7 +288,7 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addressField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -301,6 +309,84 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void edit(String emailStr){
+        Connection con = asliDbConnection.connect();
+        PreparedStatement ps = null;
+
+        // Cinsiyet belirleme
+        String gender = "";
+        if (jRadioButton1.isSelected()) {
+            gender = "Erkek";
+        } else if (jRadioButton2.isSelected()) {
+            gender = "Kadın";
+        }
+
+        // Şifre kontrolü
+        String password1 = passwordField.getText();
+        String password2 = passwordField2.getText();
+        String actualPassword = "";
+
+        if (password1.equals(password2)) {
+            actualPassword = password1;
+        } else {
+            JOptionPane.showMessageDialog(null, "Şifre aynı olmak zorunda");
+            throw new IllegalArgumentException();
+        }
+
+        // SQL sorgusu
+        String sql = "UPDATE clinics SET name = ?, city = ?, province = ?, branch = ?, email = ?, password = ?, about = ?  WHERE email = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            // Parametreleri ayarlama
+            ps.setString(1, clinicName.getText());
+            ps.setString(2, surnameText.getText());
+            ps.setString(3, gender);
+            ps.setInt(4, Integer.parseInt(ageText.getText()));
+            ps.setString(5, emailText.getText());
+            ps.setString(6, actualPassword);
+            ps.setString(7, phoneField.getText()); // Assuming phone number is stored as a String
+            ps.setString(8, cityText.getText()); // Assuming phone number is stored as a String
+
+            ps.setString(9, provinceText.getText()); // Assuming phone number is stored as a String
+
+            ps.setString(10, emailStr); // WHERE clause için email
+
+            // Sorguyu çalıştırma
+            ps.executeUpdate();
+            System.out.println("Data has been updated");
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    
+
+        this.email = emailText.getText();
+
+        JFrame frame = new MainMenuPatient(email);
+        frame.setVisible(true);
+        setVisible(true);
+
+    }
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JFrame frame = new MainMenuClinic(email);
@@ -308,17 +394,17 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void clinicNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clinicNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_clinicNameActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_emailFieldActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void comFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_comFieldActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -362,12 +448,16 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new clinicEditPageJFrame(email).setVisible(true);
+                new clinicEditPageJFrame(staticMail).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addressField;
+    private javax.swing.JTextField clinicName;
+    private javax.swing.JTextField comField;
+    private javax.swing.JTextField emailField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -387,9 +477,5 @@ public class clinicEditPageJFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

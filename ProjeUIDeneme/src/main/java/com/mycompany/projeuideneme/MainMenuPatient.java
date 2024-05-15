@@ -31,7 +31,11 @@ public class MainMenuPatient extends javax.swing.JFrame {
      */
     
     String email = "";
+<<<<<<< HEAD
 >>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
+=======
+    static String staticMail = "";
+>>>>>>> a6dfc04d3e3e43574090435ba3f3b437dcbe6f4b
     
     public MainMenuPatient(String emailString) {
         initComponents();
@@ -52,6 +56,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             email = emailString;
+            staticMail = emailString;
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
@@ -177,8 +182,8 @@ public class MainMenuPatient extends javax.swing.JFrame {
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new PharmacyDisplayJFrame();
-        frame.setVisible(true);
+        //JFrame frame = new PharmacyDisplayJFrame();
+        //frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
 
@@ -212,7 +217,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuPatient().setVisible(true);
+                new MainMenuPatient(staticMail).setVisible(true);
             }
         });
     }

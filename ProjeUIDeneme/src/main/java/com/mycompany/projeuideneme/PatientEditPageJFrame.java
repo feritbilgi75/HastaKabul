@@ -22,6 +22,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
      */
     
     String email = "";
+    static String staticMail = "";
     
     public PatientEditPageJFrame(String emailString) {
         initComponents();
@@ -29,6 +30,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         PreparedStatement ps = null;
         ResultSet rs = null;
         email = emailString;
+        staticMail = emailString;
         System.out.println(email);
         System.out.println(emailString);
         
@@ -236,10 +238,8 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        //Bilgileri database'de girilenlere göre değiştirerek ana sayfaya döner (Constructor ayarlanmalı).
-        
+    
+    public void edit(String emailStr){
         Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
 
@@ -281,7 +281,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
 
             ps.setString(9, provinceText.getText()); // Assuming phone number is stored as a String
 
-            ps.setString(10, email); // WHERE clause için email
+            ps.setString(10, emailStr); // WHERE clause için email
 
             // Sorguyu çalıştırma
             ps.executeUpdate();
@@ -307,96 +307,18 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
 
     
 
-        email = emailText.getText();
+        this.email = emailText.getText();
 
         JFrame frame = new MainMenuPatient(email);
         frame.setVisible(true);
         setVisible(true);
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
-        Connection con = patientDbConnection.connect();
-        PreparedStatement ps = null;
-             */        
-        //Update kısmı
-        /*
-        String gender = "";
-            if (jRadioButton1.isSelected()){
-                gender = "Erkek";
-            }
-            else if (jRadioButton2.isSelected()){
-                gender = "Kadın";
-            }
-            String password1 = passwordField.getText();
-            String password2 = passwordField2.getText();
-            String actualPassword = "";
-
-            if (password1.equals(password2)){
-                actualPassword = password1;
-
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Şifre aynı olmak zorunda");
-                throw new IllegalArgumentException();
-            }
-        
-        String sql = "UPDATE patients set firstName = '" + nameText.getText() +"',"+
-                " lastName = '" + surnameText.getText() + "'," +
-                " gender = " + gender + "," +
-                " age = '" + Integer.parseInt(ageText.getText()) + "'," +
-                " email = '" + emailText.getText() + "'," +
-                " password = '" + actualPassword + "'," +
-                " phoneNumber = '" + Integer.parseInt(phoneField.getText()) +
-                
-                "' where email = ?";
-        
-        try{
-            
-            //bu üstteki kısmı genişleterek belli if koşullarıyla uyarlayabilirsin.
-            ps = con.prepareStatement(sql);
-            
-            ps.setString(1, email);
-            */
-            /*
-            ps.setString(2, surnameText.getText());
-            
-            
-            ps.setString(3, gender);
-            ps.setInt(4, );
-            ps.setString(5, email);
-            
-            
-            ps.setInt(7, Integer.parseInt(phoneField.getText()));
-            */
-            /*
-            ps.execute();
-            System.out.println("Data has been updated");
-        } catch(SQLException e){
-            System.out.println(e.toString());
-        }
-        
-        
-        System.out.println("OLDU AMK GOOOOOOOOOL");
-        
-        email = emailText.getText();
-        
-        JFrame frame = new MainMenuPatient(email);
-        frame.setVisible(true);
-        setVisible(true);
-            */
+    }
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //Bilgileri database'de girilenlere göre değiştirerek ana sayfaya döner (Constructor ayarlanmalı).
+        edit(email);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -433,7 +355,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PatientEditPageJFrame(email).setVisible(true);
+                new PatientEditPageJFrame(staticMail).setVisible(true);
             }
         });
     }

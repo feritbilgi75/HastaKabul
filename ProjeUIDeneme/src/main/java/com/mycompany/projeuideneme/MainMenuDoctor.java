@@ -20,6 +20,7 @@ public class MainMenuDoctor extends javax.swing.JFrame {
      * Creates new form MainMenuPatient
      */
     String email = "";
+    static String staticMail = "";
     public MainMenuDoctor(String emailString) {
         initComponents();
         Connection con = doctorDbConnection.connect();
@@ -31,6 +32,7 @@ public class MainMenuDoctor extends javax.swing.JFrame {
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             email = emailString;
+            staticMail = emailString;
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
@@ -151,15 +153,15 @@ public class MainMenuDoctor extends javax.swing.JFrame {
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new PharmacyDisplayJFrame();
-        frame.setVisible(true);
+        //JFrame frame = new PharmacyDisplayJFrame();
+        //frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Randevu doktor
-        JFrame frame = new appointments_doctor();
+        JFrame frame = new appointments_doctor(staticMail);
         frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -199,7 +201,7 @@ public class MainMenuDoctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuDoctor().setVisible(true);
+                new MainMenuDoctor(staticMail).setVisible(true);
             }
         });
     }
