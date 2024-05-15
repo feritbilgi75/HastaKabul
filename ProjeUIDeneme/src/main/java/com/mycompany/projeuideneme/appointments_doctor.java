@@ -10,55 +10,14 @@
 
 package com.mycompany.projeuideneme;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 
 public class appointments_doctor extends javax.swing.JFrame {
-    String email = "";
+
     /**
      * Creates new form appointments_doctor
      */
-    
-    String email = "";
-    static String staticMail = "";
-    public appointments_doctor(String emailString) {
+    public appointments_doctor() {
         initComponents();
-        Connection con = doctorDbConnection.connect();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        
-        try{
-            String sql = "Select * from doctors where email = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            email = emailString;
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                rs.close();
-                ps.close();
-                con.close();
-            }catch(SQLException e){
-                System.out.println(e.toString());
-            }
-            
-        }
     }
 
     /**
@@ -146,7 +105,7 @@ public class appointments_doctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new appointments_doctor(staticMail).setVisible(true);
+                new appointments_doctor().setVisible(true);
             }
         });
     }

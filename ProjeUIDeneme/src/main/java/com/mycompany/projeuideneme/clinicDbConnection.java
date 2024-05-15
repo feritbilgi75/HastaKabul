@@ -18,7 +18,7 @@ public class clinicDbConnection {
         Connection con = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            con = DriverManager.getConnection("jdbc:sqlite:clinicDb.db");
+            con = DriverManager.getConnection("jdbc:sqlite:doctorDb.db");
             System.out.println("Connected!");
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();

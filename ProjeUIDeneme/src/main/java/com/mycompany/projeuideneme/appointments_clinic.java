@@ -14,38 +14,51 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 public class appointments_clinic extends javax.swing.JFrame {
-        static String email = "";
 
     /**
      * Creates new form appointments_clinic
-     * @param emailString
      */
     
-    public appointments_clinic(String emailString) {
+    
+    private Integer clinicRowId = 0;
+    
+    public appointments_clinic(Integer clinicRowId) {
         initComponents();
+        this.clinicRowId = clinicRowId;
+        getAppointments(this.clinicRowId,"00","99");
+    }
+
+    private void getAppointments(Integer clinicRowId,String basTarih , String bitTarih){
         Connection con = clinicDbConnection.connect();
         PreparedStatement ps = null;
         ResultSet rs = null;
         
         try{
-            String sql = "Select * from clinics where email = ?";
+            String sql = "Select c.name,c.branch,b.firstName,a.zaman "
+                    + "from appointments a , doctors b , clinics c"
+                    + " where a.clinicRowId = ? and a.doctorRowId = b.rowid  "
+                    + "and a.zaman >= ? "
+                    + "and a.zaman <= ? "
+                    + " and a.clinicRowId = c.rowid ";
+            
             ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            email = emailString;
+            ps.setInt(1, clinicRowId);
+            ps.setString(2, basTarih);
+            ps.setString(3, bitTarih);
+                
+           
             rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
+            rs.setFetchSize(10);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+        
+            while(rs.next()){
+                
+                 model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+            }
         }catch(SQLException e){
             System.out.println(e.toString());
         }finally{
@@ -59,7 +72,6 @@ public class appointments_clinic extends javax.swing.JFrame {
             
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -100,25 +112,20 @@ public class appointments_clinic extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 170, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01/05/2024", "02/05/2024", "03/05/2024", "04/05/2024" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 202, 120, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01/06/2024", "02/06/2024", "03/06/2024", "04/06/2024" }));
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 202, 120, 30));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp Button.png"))); // NOI18N
         jButton3.setBorderPainted(false);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 200, 130, 40));
-
+        
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
+            new Object [][] {},
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Klinik Adı", "Branş Adı","Doktor Adı", "Randevu Zamanı"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -149,7 +156,10 @@ public class appointments_clinic extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        getAppointments(this.clinicRowId,jComboBox1.getModel().getSelectedItem().toString()
+                ,"99");
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -183,7 +193,7 @@ public class appointments_clinic extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new appointments_clinic(email).setVisible(true);
+                new appointments_clinic(1).setVisible(true);
             }
         });
     }

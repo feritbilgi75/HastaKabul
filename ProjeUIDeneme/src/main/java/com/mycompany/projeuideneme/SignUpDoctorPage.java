@@ -14,7 +14,6 @@ import javax.swing.JFrame;
  * @author feritbilgi
  */
 public class SignUpDoctorPage extends javax.swing.JFrame {
-        String email = "";
 
     /**
      * Creates new form SignUpDoctorPage
@@ -223,7 +222,7 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         
         
         //Main menu constructor yapılacak(üyelik işlemleri için)
-        JFrame menu = new MainMenuDoctor(email);
+        JFrame menu = new MainMenuDoctor();
         menu.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed

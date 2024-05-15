@@ -14,7 +14,6 @@ import javax.swing.JFrame;
  * @author feritbilgi
  */
 public class SignUpPatient extends javax.swing.JFrame {
-        String email = "";
 
     /**
      * Creates new form ClientSignUpPage
@@ -47,15 +46,17 @@ public class SignUpPatient extends javax.swing.JFrame {
         login_section_button = new javax.swing.JButton();
         signUp_section_button = new javax.swing.JButton();
         phoneNumber_textField = new javax.swing.JTextField();
-        cityText = new javax.swing.JTextField();
-        provinceText = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        name_textfield1.setBackground(new java.awt.Color(255, 255, 255));
+        name_textfield1.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(name_textfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 540, 70));
+
+        surname_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        surname_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(surname_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 540, 70));
 
         genderPatient.add(man);
@@ -73,11 +74,24 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(woman, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 20, 20));
-        getContentPane().add(age_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 540, 70));
-        getContentPane().add(email_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 540, 70));
-        getContentPane().add(password_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 540, 70));
-        getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 800, 540, 80));
 
+        age_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        age_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(age_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 540, 70));
+
+        email_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        email_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(email_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 540, 70));
+
+        password_field1.setBackground(new java.awt.Color(255, 255, 255));
+        password_field1.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(password_field1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 540, 70));
+
+        password_field.setBackground(new java.awt.Color(255, 255, 255));
+        password_field.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 820, 540, 70));
+
+        signUp_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_button.setBorderPainted(false);
         signUp_button.addActionListener(new java.awt.event.ActionListener() {
@@ -86,8 +100,12 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(signUp_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 900, 290, 70));
+
+        search_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        search_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(search_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 540, 70));
 
+        search_button.setBackground(new java.awt.Color(255, 255, 255));
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
         search_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +114,7 @@ public class SignUpPatient extends javax.swing.JFrame {
         });
         getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 50, -1, -1));
 
+        login_section_button.setBackground(new java.awt.Color(255, 255, 255));
         login_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         login_section_button.setBorderPainted(false);
         login_section_button.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +124,7 @@ public class SignUpPatient extends javax.swing.JFrame {
         });
         getContentPane().add(login_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 230, 50));
 
+        signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
         signUp_section_button.addActionListener(new java.awt.event.ActionListener() {
@@ -113,22 +133,13 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 210, 50));
-        getContentPane().add(phoneNumber_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 540, 60));
-        getContentPane().add(cityText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 280, 540, 70));
-        getContentPane().add(provinceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 470, 540, 70));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel2.setText("İlçe");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 110, -1));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel3.setText("Şehir");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 250, 110, -1));
+        phoneNumber_textField.setBackground(new java.awt.Color(255, 255, 255));
+        phoneNumber_textField.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(phoneNumber_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 540, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Menu_Patient.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, -1, 1010));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1006));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -164,13 +175,11 @@ public class SignUpPatient extends javax.swing.JFrame {
             password = new String(pf);
         }
         int phoneNumber = Integer.parseInt(phoneNumber_textField.getText());
-        String sehir = cityText.getText();
-        String ilce = provinceText.getText();
-        insert(firstName, lastName, gender, age, email, password, phoneNumber, sehir, ilce);
+        insert(firstName, lastName, gender, age, email, password, phoneNumber);
         
         
         //Main menu constructor yapılacak(üyelik işlemleri için)
-        JFrame menu = new MainMenuPatient(email);
+        JFrame menu = new MainMenuPatient();
         menu.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed
@@ -184,7 +193,7 @@ public class SignUpPatient extends javax.swing.JFrame {
 
     private void login_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_section_buttonActionPerformed
         // TODO add your handling code here:
-         JFrame accChose = new UIDeneme();
+        JFrame accChose = new AccountChooseJFrame();
         accChose.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_login_section_buttonActionPerformed
@@ -225,11 +234,11 @@ public class SignUpPatient extends javax.swing.JFrame {
         });
     }
     
-    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, int phoneNumber, String city, String province){
-        Connection con = asliDbConnection.connect();
+    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, int phoneNumber){
+        Connection con = patientDbConnection.connect();
         PreparedStatement ps = null;
         try{
-            String sql = "INSERT INTO patient(name, surname, gender, age, email, password, phoneNo, city, province) VALUES(?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO patients(firstName, lastName, gender, age, email, password, phoneNumber) VALUES(?,?,?,?,?,?,?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, firstName);
             ps.setString(2, lastName);
@@ -238,9 +247,6 @@ public class SignUpPatient extends javax.swing.JFrame {
             ps.setString(5, email);
             ps.setString(6, password);
             ps.setInt(7, phoneNumber);
-            ps.setString(8, city);
-            ps.setString(9, province);
-
             ps.execute();
             System.out.println("Data has been inserted!");
         } catch(SQLException e){
@@ -250,19 +256,15 @@ public class SignUpPatient extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age_textfield;
-    private javax.swing.JTextField cityText;
     private javax.swing.JTextField email_textfield;
     private javax.swing.ButtonGroup genderPatient;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton login_section_button;
     private javax.swing.JRadioButton man;
     private javax.swing.JTextField name_textfield1;
     private javax.swing.JPasswordField password_field;
     private javax.swing.JPasswordField password_field1;
     private javax.swing.JTextField phoneNumber_textField;
-    private javax.swing.JTextField provinceText;
     private javax.swing.JButton search_button;
     private javax.swing.JTextField search_textfield;
     private javax.swing.JButton signUp_button;

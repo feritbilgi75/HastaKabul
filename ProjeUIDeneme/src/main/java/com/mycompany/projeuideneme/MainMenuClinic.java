@@ -4,10 +4,6 @@
  */
 package com.mycompany.projeuideneme;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JFrame;
 
 /**
@@ -19,44 +15,8 @@ public class MainMenuClinic extends javax.swing.JFrame {
     /**
      * Creates new form MainMenuPatient
      */
-    String email = "";
-    static String staticMail = "";
-    public MainMenuClinic(String emailString) {
+    public MainMenuClinic() {
         initComponents();
-        Connection con = clinicDbConnection.connect();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        
-        try{
-            String sql = "Select * from clinics where email = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            email = emailString;
-            staticMail = emailString;
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                rs.close();
-                ps.close();
-                con.close();
-            }catch(SQLException e){
-                System.out.println(e.toString());
-            }
-            
-        }
     }
 
     /**
@@ -159,15 +119,15 @@ public class MainMenuClinic extends javax.swing.JFrame {
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        //JFrame frame = new PharmacyDisplayJFrame();
-        //frame.setVisible(true);
+        JFrame frame = new PharmacyDisplayJFrame();
+        frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Randevu kilnik
-        JFrame frame = new appointments_clinic(staticMail);
+        JFrame frame = new appointments_clinic(1);
         frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -205,7 +165,7 @@ public class MainMenuClinic extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuClinic(staticMail).setVisible(true);
+                new MainMenuClinic().setVisible(true);
             }
         });
     }

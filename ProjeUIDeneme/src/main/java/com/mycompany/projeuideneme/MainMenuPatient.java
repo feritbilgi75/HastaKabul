@@ -4,14 +4,6 @@
  */
 package com.mycompany.projeuideneme;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-<<<<<<< HEAD
-=======
-
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
 import javax.swing.JFrame;
 
 /**
@@ -20,53 +12,11 @@ import javax.swing.JFrame;
  */
 public class MainMenuPatient extends javax.swing.JFrame {
 
- 
-    private String email = "";
-    
-    public MainMenuPatient(){}
     /**
      * Creates new form MainMenuPatient
-     * @param emailString
      */
-    
-    public MainMenuPatient(String emailString) {
+    public MainMenuPatient() {
         initComponents();
-        Connection con = asliDbConnection.connect();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        
-        try{
-
-            String sql = "Select * from doctors where email = ?";
-            //String sql = "Select * from patients where email = ?";
-            //String sql = "Select * from patient where email = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            email = emailString;
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                rs.close();
-                ps.close();
-                con.close();
-            }catch(SQLException e){
-                System.out.println(e.toString());
-            }
-            
-        }
     }
 
     /**
@@ -160,15 +110,11 @@ public class MainMenuPatient extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new PatientEditPageJFrame(email);
-        frame.setVisible(true);
-        setVisible(false);
-        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new PharmacyDisplayJFrame(email);
+        JFrame frame = new PharmacyDisplayJFrame();
         frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
@@ -203,7 +149,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuPatient(staticMail).setVisible(true);
+                new MainMenuPatient().setVisible(true);
             }
         });
     }

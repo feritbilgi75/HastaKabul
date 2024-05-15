@@ -4,19 +4,14 @@
  */
 package com.mycompany.projeuideneme;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.awt.Image;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author feritbilgi
  */
 public class UIDeneme extends javax.swing.JFrame {
-        String email = "";
 
     /**
      * Creates new form UIDeneme
@@ -36,90 +31,40 @@ public class UIDeneme extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-        jLabel1 = new javax.swing.JLabel();
-=======
-        accountType = new javax.swing.ButtonGroup();
         email_textField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        passwordLabel = new javax.swing.JLabel();
-        doctorLogin = new javax.swing.JRadioButton();
-        patientLogin = new javax.swing.JRadioButton();
-        clinicLogin = new javax.swing.JRadioButton();
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        signUp_section_button = new javax.swing.JButton();
         logIn_section_button = new javax.swing.JButton();
-        emailLabel = new javax.swing.JLabel();
-        email_textField = new javax.swing.JTextField();
-        passwordLabel = new javax.swing.JLabel();
+        logIn_button = new javax.swing.JButton();
+        signUp_section_button = new javax.swing.JButton();
         passwordField = new javax.swing.JPasswordField();
+        search_button = new javax.swing.JButton();
+        search_bar = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-<<<<<<< HEAD
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-=======
 
         email_textField.setBackground(new java.awt.Color(255, 255, 255));
+        email_textField.setForeground(new java.awt.Color(0, 0, 0));
         email_textField.setSelectionColor(new java.awt.Color(255, 255, 255));
-        email_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_textFieldActionPerformed(evt);
-            }
-        });
         getContentPane().add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 533, 480, 60));
 
-        passwordField.setBackground(new java.awt.Color(255, 255, 255));
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
+        logIn_section_button.setBackground(new java.awt.Color(255, 255, 255));
+        logIn_section_button.setForeground(new java.awt.Color(255, 255, 255));
+        logIn_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
+        logIn_section_button.setText("jButton2");
+        logIn_section_button.setBorderPainted(false);
+        getContentPane().add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 220, 50));
+
+        logIn_button.setBackground(new java.awt.Color(255, 255, 255));
+        logIn_button.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/ProjeUI/src/main/java/Assets/LogIn.png")); // NOI18N
+        logIn_button.setBorder(null);
+        logIn_button.setBorderPainted(false);
+        logIn_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
+                logIn_buttonActionPerformed(evt);
             }
         });
-        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 480, 60));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        emailLabel.setBackground(new java.awt.Color(204, 204, 204));
-        emailLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
-        emailLabel.setForeground(java.awt.Color.red);
-        emailLabel.setText("Email");
-        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 140, 60));
-
-        passwordLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
-        passwordLabel.setForeground(java.awt.Color.red);
-        passwordLabel.setText("Password");
-        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 620, 170, 40));
-
-        doctorLogin.setBackground(new java.awt.Color(255, 255, 255));
-        accountType.add(doctorLogin);
-        doctorLogin.setForeground(new java.awt.Color(0, 0, 0));
-        doctorLogin.setSelected(true);
-        doctorLogin.setText("Doctor Login");
-        getContentPane().add(doctorLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, -1, -1));
-
-        patientLogin.setBackground(new java.awt.Color(255, 255, 255));
-        accountType.add(patientLogin);
-        patientLogin.setForeground(new java.awt.Color(0, 0, 0));
-        patientLogin.setText("Patient Login");
-        getContentPane().add(patientLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, -1, -1));
-
-        clinicLogin.setBackground(new java.awt.Color(255, 255, 255));
-        accountType.add(clinicLogin);
-        clinicLogin.setForeground(new java.awt.Color(0, 0, 0));
-        clinicLogin.setText("Clinic Login");
-        getContentPane().add(clinicLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 120, -1, -1));
-
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LOGO_1.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 250, 260));
+        getContentPane().add(logIn_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 780, 290, 60));
 
         signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
@@ -129,57 +74,33 @@ public class UIDeneme extends javax.swing.JFrame {
                 signUp_section_buttonActionPerformed(evt);
             }
         });
-        jPanel1.add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 690, -1, -1));
+        getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 40, -1, -1));
 
-        logIn_section_button.setBackground(new java.awt.Color(255, 255, 255));
-        logIn_section_button.setForeground(new java.awt.Color(255, 255, 255));
-        logIn_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
-        logIn_section_button.setText("jButton2");
-        logIn_section_button.setBorderPainted(false);
-        logIn_section_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logIn_section_buttonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 690, 220, 50));
+        passwordField.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 480, 60));
 
-        emailLabel.setBackground(new java.awt.Color(204, 204, 204));
-        emailLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
-        emailLabel.setForeground(java.awt.Color.red);
-        emailLabel.setText("Email");
-        jPanel1.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 140, 60));
+        search_button.setBackground(new java.awt.Color(255, 255, 255));
+        search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
+        search_button.setBorderPainted(false);
+        getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
 
-        email_textField.setSelectionColor(new java.awt.Color(255, 255, 255));
-        email_textField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_textFieldActionPerformed(evt);
-            }
-        });
-        jPanel1.add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 480, 60));
+        search_bar.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(search_bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 43, 490, 50));
 
-        passwordLabel.setFont(new java.awt.Font("K2D", 1, 24)); // NOI18N
-        passwordLabel.setForeground(java.awt.Color.red);
-        passwordLabel.setText("Password");
-        jPanel1.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 170, 40));
-
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
-            }
-        });
-        jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, 480, 60));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1450, 1030));
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/resources/ui_component_assets/LogIn_MenuPage.png")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void logIn_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_buttonActionPerformed
         // TODO add your handling code here:
-        
+        //Login sonrası frame açacak contructor kurulduktan sonra küçük oynama gerek.
+        JFrame frame = new MainMenuPatient();
+        frame.setVisible(true);
+        setVisible(false);
        
     }//GEN-LAST:event_logIn_buttonActionPerformed
-
 
     private void signUp_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp_section_buttonActionPerformed
         // TODO add your handling code here:
@@ -187,237 +108,6 @@ public class UIDeneme extends javax.swing.JFrame {
         accChose.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_section_buttonActionPerformed
-
-
-    private void email_textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_textFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_email_textFieldActionPerformed
-
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
-
-    private void logIn_section_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logIn_section_buttonActionPerformed
-<<<<<<< HEAD
-        String emailString = email_textField.getText().toString();
-    
-    
-        Connection con = patientDbConnection.connect();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        
-        boolean equal = false;
-        
-        try{
-=======
-        //Login sonrası frame açacak contructor kurulduktan sonra küçük oynama gerek.
-        String emailString = email_textField.getText();
-    
-    
-        
-        
-        boolean equal = false;
-        String accType = "";
-        
-        if (doctorLogin.isSelected()){
-            Connection con = asliDbConnection.connect();
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            accType = "doc";
-            
-            try{
-            String sql = "Select * from doctors where email = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            char[] passwordArray = passwordField.getPassword();
-            String password = "";
-            for (char c : passwordArray){
-                password += c;
-            }
-            String actualPassword = rs.getString("password");
-            if (password.equals(actualPassword)){
-                equal = true;
-            }
-            
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                rs.close();
-                ps.close();
-                con.close();
-            }catch(SQLException e){
-                System.out.println(e.toString());
-            }
-            
-        }
-        
-        if (equal == true){
-            JFrame frame = new MainMenuPatient(email_textField.getText());
-        frame.setVisible(true);
-        setVisible(false);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Yanlış şifre girdiniz.");
-        }
-        }
-        
-        
-        else if (patientLogin.isSelected()){
-            Connection con = asliDbConnection.connect();
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            accType = "ptn";
-            
-            try{
-<<<<<<< HEAD
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-            String sql = "Select * from patients where email = ?";
-=======
-            String sql = "Select * from patient where email = ?";
->>>>>>> 42709109915da6a22539e17887bc267673bd7631
-            ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            char[] passwordArray = passwordField.getPassword();
-            String password = "";
-            for (char c : passwordArray){
-                password += c;
-            }
-            String actualPassword = rs.getString("password");
-            if (password.equals(actualPassword)){
-                equal = true;
-            }
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                rs.close();
-                ps.close();
-                con.close();
-            }catch(SQLException e){
-                System.out.println(e.toString());
-            }
-            
-        }
-        
-        if (equal == true){
-            JFrame frame = new MainMenuPatient(email_textField.getText());
-        frame.setVisible(true);
-        setVisible(false);
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Yanlış şifre girdiniz.");
-        }
-<<<<<<< HEAD
-=======
-        }
-        
-        else if (clinicLogin.isSelected()){
-            Connection con = asliDbConnection.connect();
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            
-            accType = "cln";
-            
-            try{
-            String sql = "Select * from clinics where email = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, emailString);
-            
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
-            char[] passwordArray = passwordField.getPassword();
-            String password = "";
-            for (char c : passwordArray){
-                password += c;
-            }
-            String actualPassword = rs.getString("password");
-            if (password.equals(actualPassword)){
-                equal = true;
-            }
-            
-            // String branchOfDoctor = rs.getString("branch");
-            // doctorNameText.setText(name);
-            // bracnhText.setText(branchOfDoctor);
-            // locationText.setText("Ankara");
-            // jTextArea1.setText(rs.getString("about"));
-        }catch(SQLException e){
-            System.out.println(e.toString());
-        }finally{
-            try{
-                rs.close();
-                ps.close();
-                con.close();
-            }catch(SQLException e){
-                System.out.println(e.toString());
-            }
-            
-        }
-        
-        if (equal == true){
-            if (accType.equals("doc")){
-                JFrame frame = new MainMenuDoctor(email_textField.getText());
-                frame.setVisible(true);
-                setVisible(false);
-            }
-            else if (accType.equals("cln")){
-                JFrame frame = new MainMenuClinic(email_textField.getText());
-                frame.setVisible(true);
-                setVisible(false);
-            }
-            else if (accType.equals("ptn")){
-                JFrame frame = new MainMenuPatient(email_textField.getText());
-                frame.setVisible(true);
-                setVisible(false);
-            }
-            
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Yanlış şifre girdiniz.");
-        }
-        }
-
-        
-        
-        
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-    }//GEN-LAST:event_logIn_section_buttonActionPerformed
-
-    private void search_barActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_barActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_barActionPerformed
-
 
     
     
@@ -457,18 +147,13 @@ public class UIDeneme extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup accountType;
-    private javax.swing.JRadioButton clinicLogin;
-    private javax.swing.JRadioButton doctorLogin;
-    private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField email_textField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logIn_button;
     private javax.swing.JButton logIn_section_button;
     private javax.swing.JPasswordField passwordField;
-    private javax.swing.JLabel passwordLabel;
-    private javax.swing.JRadioButton patientLogin;
+    private javax.swing.JTextField search_bar;
+    private javax.swing.JButton search_button;
     private javax.swing.JButton signUp_section_button;
     // End of variables declaration//GEN-END:variables
 }
