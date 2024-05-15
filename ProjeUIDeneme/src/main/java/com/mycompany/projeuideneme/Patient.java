@@ -24,7 +24,7 @@ public class Patient {
     protected static void search(JTextField text, Patient patient)
     {
         String searched = text.getText();
-        String url = ""; // the sql url
+        String url = "jdbc:sqlite:asliDb.db"; // the sql url
         String sql = "SELECT * FROM doctors WHERE name = ?";
         
         try (Connection con = DriverManager.getConnection(url)){

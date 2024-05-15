@@ -20,22 +20,14 @@ import javax.swing.JFrame;
  */
 public class MainMenuPatient extends javax.swing.JFrame {
 
-<<<<<<< HEAD
  
     private String email = "";
     
     public MainMenuPatient(){}
-=======
     /**
      * Creates new form MainMenuPatient
+     * @param emailString
      */
-    
-    String email = "";
-<<<<<<< HEAD
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-=======
-    static String staticMail = "";
->>>>>>> a6dfc04d3e3e43574090435ba3f3b437dcbe6f4b
     
     public MainMenuPatient(String emailString) {
         initComponents();
@@ -44,25 +36,19 @@ public class MainMenuPatient extends javax.swing.JFrame {
         ResultSet rs = null;
         
         try{
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             String sql = "Select * from doctors where email = ?";
-=======
-            String sql = "Select * from patients where email = ?";
->>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
-=======
-            String sql = "Select * from patient where email = ?";
->>>>>>> 42709109915da6a22539e17887bc267673bd7631
+            //String sql = "Select * from patients where email = ?";
+            //String sql = "Select * from patient where email = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             email = emailString;
-            staticMail = emailString;
-            rs = ps.executeQuery();
-            
-            //we are reading one row, so no need to loop
             // String firstName = rs.getString(1);
             // String statueOfDoctor = rs.getString("statue");
             // String name = statueOfDoctor + " Dr " + firstName;
+            rs = ps.executeQuery();
+            
+            //we are reading one row, so no need to loop
             
             // String branchOfDoctor = rs.getString("branch");
             // doctorNameText.setText(name);
@@ -182,8 +168,8 @@ public class MainMenuPatient extends javax.swing.JFrame {
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        //JFrame frame = new PharmacyDisplayJFrame();
-        //frame.setVisible(true);
+        JFrame frame = new PharmacyDisplayJFrame(email);
+        frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
 

@@ -16,14 +16,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class appointments_clinic extends javax.swing.JFrame {
-        String email = "";
+        static String email = "";
 
     /**
      * Creates new form appointments_clinic
+     * @param emailString
      */
-    
-    
-    public static String email = "";
     
     public appointments_clinic(String emailString) {
         initComponents();
