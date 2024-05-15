@@ -43,20 +43,16 @@ public class UIDeneme extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        email_textField.setBackground(new java.awt.Color(255, 255, 255));
-        email_textField.setForeground(new java.awt.Color(0, 0, 0));
         email_textField.setSelectionColor(new java.awt.Color(255, 255, 255));
         getContentPane().add(email_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 533, 480, 60));
 
-        logIn_section_button.setBackground(new java.awt.Color(255, 255, 255));
         logIn_section_button.setForeground(new java.awt.Color(255, 255, 255));
         logIn_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         logIn_section_button.setText("jButton2");
         logIn_section_button.setBorderPainted(false);
         getContentPane().add(logIn_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, 220, 50));
 
-        logIn_button.setBackground(new java.awt.Color(255, 255, 255));
-        logIn_button.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/ProjeUI/src/main/java/Assets/LogIn.png")); // NOI18N
+        logIn_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_Button.png"))); // NOI18N
         logIn_button.setBorder(null);
         logIn_button.setBorderPainted(false);
         logIn_button.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +62,6 @@ public class UIDeneme extends javax.swing.JFrame {
         });
         getContentPane().add(logIn_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 780, 290, 60));
 
-        signUp_section_button.setBackground(new java.awt.Color(255, 255, 255));
         signUp_section_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Button.png"))); // NOI18N
         signUp_section_button.setBorderPainted(false);
         signUp_section_button.addActionListener(new java.awt.event.ActionListener() {
@@ -75,19 +70,14 @@ public class UIDeneme extends javax.swing.JFrame {
             }
         });
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 40, -1, -1));
-
-        passwordField.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, 480, 60));
 
-        search_button.setBackground(new java.awt.Color(255, 255, 255));
         search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
         search_button.setBorderPainted(false);
         getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, -1, -1));
-
-        search_bar.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(search_bar, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 43, 490, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/feritbilgi/Desktop/Engineering/OneDrive/EngineeringCloud/CS102.2/Proje ile Alakalı Dosyalar/HastaKabul/ProjeUIDeneme/src/main/resources/ui_component_assets/LogIn_MenuPage.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/LogIn_MenuPage.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
