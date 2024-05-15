@@ -47,6 +47,10 @@ public class SignUpPatient extends javax.swing.JFrame {
         login_section_button = new javax.swing.JButton();
         signUp_section_button = new javax.swing.JButton();
         phoneNumber_textField = new javax.swing.JTextField();
+        cityText = new javax.swing.JTextField();
+        provinceText = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,7 +113,19 @@ public class SignUpPatient extends javax.swing.JFrame {
             }
         });
         getContentPane().add(signUp_section_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 30, 210, 50));
-        getContentPane().add(phoneNumber_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 540, 60));
+        getContentPane().add(phoneNumber_textField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 540, 60));
+        getContentPane().add(cityText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 280, 540, 70));
+        getContentPane().add(provinceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 470, 540, 70));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setText("İlçe");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 110, -1));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel3.setText("Şehir");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 250, 110, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Menu_Patient.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, -1, 1010));
@@ -148,7 +164,9 @@ public class SignUpPatient extends javax.swing.JFrame {
             password = new String(pf);
         }
         int phoneNumber = Integer.parseInt(phoneNumber_textField.getText());
-        insert(firstName, lastName, gender, age, email, password, phoneNumber);
+        String sehir = cityText.getText();
+        String ilce = provinceText.getText();
+        insert(firstName, lastName, gender, age, email, password, phoneNumber, sehir, ilce);
         
         
         //Main menu constructor yapılacak(üyelik işlemleri için)
@@ -207,11 +225,11 @@ public class SignUpPatient extends javax.swing.JFrame {
         });
     }
     
-    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, int phoneNumber){
+    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, int phoneNumber, String city, String province){
         Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
         try{
-            String sql = "INSERT INTO patient(name, surname, gender, age, email, password, phoneNo) VALUES(?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO patient(name, surname, gender, age, email, password, phoneNo, city, province) VALUES(?,?,?,?,?,?,?,?,?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, firstName);
             ps.setString(2, lastName);
@@ -220,6 +238,9 @@ public class SignUpPatient extends javax.swing.JFrame {
             ps.setString(5, email);
             ps.setString(6, password);
             ps.setInt(7, phoneNumber);
+            ps.setString(8, city);
+            ps.setString(9, province);
+
             ps.execute();
             System.out.println("Data has been inserted!");
         } catch(SQLException e){
@@ -229,15 +250,19 @@ public class SignUpPatient extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age_textfield;
+    private javax.swing.JTextField cityText;
     private javax.swing.JTextField email_textfield;
     private javax.swing.ButtonGroup genderPatient;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton login_section_button;
     private javax.swing.JRadioButton man;
     private javax.swing.JTextField name_textfield1;
     private javax.swing.JPasswordField password_field;
     private javax.swing.JPasswordField password_field1;
     private javax.swing.JTextField phoneNumber_textField;
+    private javax.swing.JTextField provinceText;
     private javax.swing.JButton search_button;
     private javax.swing.JTextField search_textfield;
     private javax.swing.JButton signUp_button;

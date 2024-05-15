@@ -41,13 +41,15 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
             
             //we are reading one row, so no need to loop
             while (rs.next()){
-                String firstName = rs.getString("firstName");
-                String surname = rs.getString("lastName");
+                String firstName = rs.getString("name");
+                String surname = rs.getString("surname");
                 int age = rs.getInt("age");
                 String gender = rs.getString("gender");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
-                int phoneNumber = rs.getInt("phoneNumber");
+                int phoneNumber = rs.getInt("phoneNo");
+                String city = rs.getString("city");
+                String province = rs.getString("province");
             
                 nameText.setText(firstName);
                 surnameText.setText(surname);
@@ -62,6 +64,8 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
                 else{
                     jRadioButton2.isSelected();
                 }
+                cityText.setText(city);
+                provinceText.setText(province);
             }
             
             
@@ -105,6 +109,10 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         passwordField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         phoneField = new javax.swing.JTextField();
+        cityText = new javax.swing.JTextField();
+        provinceText = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -181,6 +189,22 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         phoneField.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 200, 530, 60));
 
+        cityText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(cityText, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 300, 530, 60));
+
+        provinceText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(provinceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 490, 530, 60));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel2.setText("İlçe");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 450, 110, 20));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel3.setText("Şehir");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 270, 110, 20));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Edit_Menu_Patient.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
@@ -240,7 +264,7 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
         }
 
         // SQL sorgusu
-        String sql = "UPDATE patient SET name = ?, surname = ?, gender = ?, age = ?, email = ?, password = ?, phoneNo = ? WHERE email = ?";
+        String sql = "UPDATE patient SET name = ?, surname = ?, gender = ?, age = ?, email = ?, password = ?, phoneNo = ? city = ? province = ? WHERE email = ?";
 
         try {
             ps = con.prepareStatement(sql);
@@ -253,7 +277,11 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
             ps.setString(5, emailText.getText());
             ps.setString(6, actualPassword);
             ps.setString(7, phoneField.getText()); // Assuming phone number is stored as a String
-            ps.setString(8, email); // WHERE clause için email
+            ps.setString(8, cityText.getText()); // Assuming phone number is stored as a String
+
+            ps.setString(9, provinceText.getText()); // Assuming phone number is stored as a String
+
+            ps.setString(10, email); // WHERE clause için email
 
             // Sorguyu çalıştırma
             ps.executeUpdate();
@@ -413,16 +441,20 @@ public class PatientEditPageJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ageText;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextField cityText;
     private javax.swing.JTextField emailText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField nameText;
     private javax.swing.JTextField passwordField;
     private javax.swing.JTextField passwordField2;
     private javax.swing.JTextField phoneField;
+    private javax.swing.JTextField provinceText;
     private javax.swing.JTextField surnameText;
     // End of variables declaration//GEN-END:variables
 }
