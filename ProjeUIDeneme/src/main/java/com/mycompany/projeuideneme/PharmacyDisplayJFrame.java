@@ -20,12 +20,12 @@ public class PharmacyDisplayJFrame extends javax.swing.JFrame {
      */
     
     String email = "";
-    public PharmacyDisplayJFrame(String emailString) {
+    public PharmacyDisplayJFrame() {
         initComponents();
         Connection con = patientDbConnection.connect();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        
+        /*
         try{
             String sql = "Select * from patients where email = ?";
             ps = con.prepareStatement(sql);
@@ -55,6 +55,7 @@ public class PharmacyDisplayJFrame extends javax.swing.JFrame {
             }
             
         }
+        */
     }
 
     /**

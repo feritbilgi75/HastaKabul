@@ -168,7 +168,7 @@ public class UIDeneme extends javax.swing.JFrame {
         String accType = "";
         
         if (doctorLogin.isSelected()){
-            Connection con = doctorDbConnection.connect();
+            Connection con = asliDbConnection.connect();
             PreparedStatement ps = null;
             ResultSet rs = null;
             accType = "doc";
@@ -280,7 +280,7 @@ public class UIDeneme extends javax.swing.JFrame {
         }
         
         else if (clinicLogin.isSelected()){
-            Connection con = clinicDbConnection.connect();
+            Connection con = asliDbConnection.connect();
             PreparedStatement ps = null;
             ResultSet rs = null;
             

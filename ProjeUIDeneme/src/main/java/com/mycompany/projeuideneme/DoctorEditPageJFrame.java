@@ -11,11 +11,13 @@
 
 package com.mycompany.projeuideneme;
 
+import static com.mycompany.projeuideneme.PatientEditPageJFrame.staticMail;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 public class DoctorEditPageJFrame extends javax.swing.JFrame {
@@ -24,23 +26,73 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
      * Creates new form DoctorEditPageJFrame
      */
     String email = "";
+    static String staticMail = "";
     public DoctorEditPageJFrame(String emailString) {
         initComponents();
-        Connection con = patientDbConnection.connect();
+        Connection con = asliDbConnection.connect();
         PreparedStatement ps = null;
         ResultSet rs = null;
+        email = emailString;
+        staticMail = emailString;
+        System.out.println(email);
+        System.out.println(emailString);
         
         try{
-            String sql = "Select * from patients where email = ?";
+            String sql = "Select * from doctors where email = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
-            email = emailString;
+            
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
-            // String firstName = rs.getString(1);
-            // String statueOfDoctor = rs.getString("statue");
-            // String name = statueOfDoctor + " Dr " + firstName;
+            while (rs.next()){
+                String firstName = rs.getString("name");
+                String surname = rs.getString("surname");
+                int age = rs.getInt("age");
+                String gender = rs.getString("gender");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                int phoneNumber = rs.getInt("phoneNo");
+                String city = rs.getString("city");
+                String province = rs.getString("province");
+                String branch = rs.getString("branch");
+                String about = rs.getString("about");
+                String clinic = rs.getString("clinic");
+            
+                nameText.setText(firstName);
+                surnameText.setText(surname);
+                emailText.setText(email);
+                ageText.setText(age + "");
+                passwordField.setText(password);
+                passwordField2.setText(password);
+                phoneField.setText(phoneNumber + "");
+                jTextField11.setText(about);
+                clinicField.setText(clinic);
+                if(gender.equals("Erkek")){
+                    jRadioButton1.isSelected();
+                }
+                else{
+                    jRadioButton2.isSelected();
+                }
+                
+                
+                if (branch.equals("Asistan")){
+                    jRadioButton3.isSelected();
+                }
+                else if (branch.equals("Uzman")){
+                    jRadioButton4.isSelected();
+                }
+                else if (branch.equals("Doçent")){
+                    jRadioButton5.isSelected();
+                }
+                else if (branch.equals("Profesör")){
+                    jRadioButton6.isSelected();
+                }
+                
+                cityText.setText(city);
+                provinceText.setText(province);
+            }
+            
             
             // String branchOfDoctor = rs.getString("branch");
             // doctorNameText.setText(name);
@@ -76,23 +128,27 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        nameText = new javax.swing.JTextField();
+        surnameText = new javax.swing.JTextField();
+        ageText = new javax.swing.JTextField();
+        emailText = new javax.swing.JTextField();
+        passwordField = new javax.swing.JTextField();
+        passwordField2 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        clinicField = new javax.swing.JTextField();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
         jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        phoneField = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        provinceText = new javax.swing.JTextField();
+        cityText = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,35 +176,35 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 400, 120, 20));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 540, 70));
+        nameText.setBackground(new java.awt.Color(255, 255, 255));
+        nameText.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(nameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 540, 70));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 540, 60));
+        surnameText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(surnameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 540, 60));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 530, 70));
+        ageText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(ageText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 530, 70));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 530, 60));
+        emailText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 530, 60));
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 540, 60));
+        passwordField.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 700, 530, 60));
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        passwordField2.setBackground(new java.awt.Color(255, 255, 255));
+        passwordField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                passwordField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 820, 540, 60));
+        getContentPane().add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 820, 540, 60));
 
         jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, 530, 60));
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 540, 70));
+        clinicField.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(clinicField, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 300, 540, 70));
 
         buttonGroup2.add(jRadioButton3);
         getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 400, 110, 30));
@@ -165,8 +221,8 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         jTextField9.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, 530, 60));
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 590, 530, 60));
+        phoneField.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 590, 530, 60));
 
         jTextField11.setBackground(new java.awt.Color(255, 255, 255));
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
@@ -189,9 +245,26 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/UploadPhotoButton.png"))); // NOI18N
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 920, 270, 60));
 
+        provinceText.setBackground(new java.awt.Color(255, 255, 255));
+        provinceText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                provinceTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(provinceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, 210, 60));
+
+        cityText.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(cityText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 210, 60));
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel3.setText("İlçe");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 667, 110, 30));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel4.setText("Şehir");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 547, 140, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/editMenuDoctor.png"))); // NOI18N
-        jLabel1.setMinimumSize(new java.awt.Dimension(1440, 1024));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1440, 1024));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, -1));
 
         pack();
@@ -201,30 +274,126 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void passwordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_passwordField2ActionPerformed
 
     private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
+    public void edit(String emailStr){
+        Connection con = asliDbConnection.connect();
+        PreparedStatement ps = null;
+
+        // Cinsiyet belirleme
+        String gender = "";
+        if (jRadioButton1.isSelected()) {
+            gender = "Erkek";
+        } else if (jRadioButton2.isSelected()) {
+            gender = "Kadın";
+        }
+
+        // Şifre kontrolü
+        String password1 = passwordField.getText();
+        String password2 = passwordField2.getText();
+        String actualPassword = "";
+
+        if (password1.equals(password2)) {
+            actualPassword = password1;
+        } else {
+            JOptionPane.showMessageDialog(null, "Şifre aynı olmak zorunda");
+            throw new IllegalArgumentException();
+        }
+
+        // SQL sorgusu
+        String sql = "UPDATE doctors SET name = ?, surname = ?, gender = ?, age = ?, email = ?, password = ?, phoneNo = ? city = ? province = ? statue = ? clinic = ? about = ? WHERE email = ?";
+
+        try {
+            ps = con.prepareStatement(sql);
+
+            // Parametreleri ayarlama
+            ps.setString(1, nameText.getText());
+            ps.setString(2, surnameText.getText());
+            ps.setString(3, gender);
+            ps.setInt(4, Integer.parseInt(ageText.getText()));
+            ps.setString(5, emailText.getText());
+            ps.setString(6, actualPassword);
+            ps.setString(7, phoneField.getText()); // Assuming phone number is stored as a String
+            ps.setString(8, cityText.getText()); // Assuming phone number is stored as a String
+
+            ps.setString(9, provinceText.getText()); // Assuming phone number is stored as a String
+            String statue = "";
+            if (jRadioButton3.isSelected()){
+                statue = "Asistan";
+            }
+            else if (jRadioButton4.isSelected()){
+                statue = "Uzman";
+            }
+            else if (jRadioButton5.isSelected()){
+                statue = "Doçent";
+            }
+            else if (jRadioButton6.isSelected()){
+                statue = "Profesör";
+            }
+            ps.setString(10, statue);
+            ps.setString(11, clinicField.getText());
+            ps.setString(12, jTextField11.getText());
+
+            ps.setString(13, emailStr); // WHERE clause için email
+
+            // Sorguyu çalıştırma
+            ps.executeUpdate();
+            System.out.println("Data has been updated");
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    
+
+        this.email = emailText.getText();
+
+        JFrame frame = new MainMenuPatient(email);
+        frame.setVisible(true);
+        setVisible(true);
+
+    }
+    
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //Editlenmiş bilgilerle ana sayfaya dönücek edit kodları daha girilmedi.
-        JFrame frame = new MainMenuDoctor();
-        frame.setVisible(true);
-        setVisible(false);
+        edit(email);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //Doctor Main Page'e döner
-        JFrame frame = new MainMenuDoctor();
+        JFrame frame = new MainMenuDoctor(email);
         frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void provinceTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_provinceTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_provinceTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,35 +425,39 @@ public class DoctorEditPageJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DoctorEditPageJFrame().setVisible(true);
+                new DoctorEditPageJFrame(staticMail).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ageText;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JTextField cityText;
+    private javax.swing.JTextField clinicField;
+    private javax.swing.JTextField emailText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField nameText;
+    private javax.swing.JTextField passwordField;
+    private javax.swing.JTextField passwordField2;
+    private javax.swing.JTextField phoneField;
+    private javax.swing.JTextField provinceText;
+    private javax.swing.JTextField surnameText;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,6 +23,7 @@ public class patient_appoinments extends javax.swing.JFrame {
      * Creates new form patient_appoinments
      */
     String email = "";
+    static String staticMail = "";
     public patient_appoinments(String emailString) {
         initComponents();
         Connection con = patientDbConnection.connect();
@@ -131,7 +132,7 @@ public class patient_appoinments extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new patient_appoinments().setVisible(true);
+                new patient_appoinments(staticMail).setVisible(true);
             }
         });
     }

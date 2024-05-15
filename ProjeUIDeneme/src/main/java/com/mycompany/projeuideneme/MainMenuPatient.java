@@ -22,6 +22,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
      */
     
     String email = "";
+    static String staticMail = "";
     
     public MainMenuPatient(String emailString) {
         initComponents();
@@ -34,6 +35,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
             ps = con.prepareStatement(sql);
             ps.setString(1, emailString);
             email = emailString;
+            staticMail = emailString;
             rs = ps.executeQuery();
             
             //we are reading one row, so no need to loop
@@ -159,8 +161,8 @@ public class MainMenuPatient extends javax.swing.JFrame {
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new PharmacyDisplayJFrame();
-        frame.setVisible(true);
+        //JFrame frame = new PharmacyDisplayJFrame();
+        //frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
 
@@ -194,7 +196,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuPatient().setVisible(true);
+                new MainMenuPatient(staticMail).setVisible(true);
             }
         });
     }
