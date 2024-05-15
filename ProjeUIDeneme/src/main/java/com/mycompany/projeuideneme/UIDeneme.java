@@ -211,7 +211,7 @@ public class UIDeneme extends javax.swing.JFrame {
         try{
 =======
         //Login sonrası frame açacak contructor kurulduktan sonra küçük oynama gerek.
-        String emailString = email_textField.getText().toString();
+        String emailString = email_textField.getText();
     
     
         
@@ -266,7 +266,7 @@ public class UIDeneme extends javax.swing.JFrame {
         }
         
         if (equal == true){
-            JFrame frame = new MainMenuPatient(email_textField.getText().toString());
+            JFrame frame = new MainMenuPatient(email_textField.getText());
         frame.setVisible(true);
         setVisible(false);
         }
@@ -327,12 +327,7 @@ public class UIDeneme extends javax.swing.JFrame {
         }
         
         if (equal == true){
-<<<<<<< HEAD
-           JFrame frame = new MainMenuPatient(email_textField.getText().toString());
-           frame.setVisible(true);
-           setVisible(false);
-=======
-            JFrame frame = new MainMenuPatient(email_textField.getText().toString());
+            JFrame frame = new MainMenuPatient(email_textField.getText());
         frame.setVisible(true);
         setVisible(false);
 >>>>>>> 416658a4eeffa75a6f130e66b79071d39490c1a8
@@ -392,17 +387,17 @@ public class UIDeneme extends javax.swing.JFrame {
         
         if (equal == true){
             if (accType.equals("doc")){
-                JFrame frame = new MainMenuDoctor(email_textField.getText().toString());
+                JFrame frame = new MainMenuDoctor(email_textField.getText());
                 frame.setVisible(true);
                 setVisible(false);
             }
             else if (accType.equals("cln")){
-                JFrame frame = new MainMenuClinic(email_textField.getText().toString());
+                JFrame frame = new MainMenuClinic(email_textField.getText());
                 frame.setVisible(true);
                 setVisible(false);
             }
             else if (accType.equals("ptn")){
-                JFrame frame = new MainMenuPatient(email_textField.getText().toString());
+                JFrame frame = new MainMenuPatient(email_textField.getText());
                 frame.setVisible(true);
                 setVisible(false);
             }
