@@ -12,8 +12,9 @@ public class ClinicDisplay extends javax.swing.JFrame {
 
     /**
      * Creates new form ClinicDisplay
+     * @param rowID
      */
-    public ClinicDisplay() {
+    public ClinicDisplay(int rowID) {
         initComponents();
     }
 
