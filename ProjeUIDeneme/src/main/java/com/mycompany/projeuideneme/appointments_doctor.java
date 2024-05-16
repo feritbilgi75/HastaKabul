@@ -10,14 +10,95 @@
 
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+
 
 public class appointments_doctor extends javax.swing.JFrame {
 
     /**
      * Creates new form appointments_doctor
      */
-    public appointments_doctor() {
+    
+    Integer id;
+    
+    public appointments_doctor(Integer id) {
         initComponents();
+        this.id = id;
+        getAppointments(id,"00","99");
+        findDoctor(id);
+    }
+    
+     private void findDoctor(Integer id) {
+        initComponents();
+        Connection con = doctorDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select firstName,lastName from doctors where rowid = ?";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            jLabel2.setText(rs.getString("firstName")+" "+rs.getString("lastName"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
+    }
+    
+    private void getAppointments(Integer id,String basTarih , String bitTarih){
+        Connection con = clinicDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select b.name,b.surname,b.gender,b.age,a.zaman "
+                    + "from appointments a , patient b , clinics c"
+                    + " where a.doctorRowId = ? and a.patientRowId = b.rowid  "//change to patient to see clinic id
+                    + "and a.zaman >= ? "
+                    + "and a.zaman <= ? "
+                    + " and a.clinicRowId = c.rowid ";
+            
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.setString(2, basTarih);
+            ps.setString(3, bitTarih);
+                
+           
+            rs = ps.executeQuery();
+            rs.setFetchSize(10);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+        
+            while(rs.next()){
+                
+                 model.addRow(new Object[]{rs.getString(1)+" "+rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5)});
+            }
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+            
+        }
     }
 
     /**
@@ -32,14 +113,16 @@ public class appointments_doctor extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+ //       setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
+/*
         jTextField1.setText("\n");
         jTextField1.setBorder(null);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 42, 430, 40));
@@ -47,22 +130,32 @@ public class appointments_doctor extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/icon_magnifying_glass.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 43, 50, 40));
-
+*/
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Randevularım.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 43, 170, 40));
 
+        jLabel2.setText("");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 950, -1));
+
+        
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/Arrow.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 50, 170, 30));
+               
         jScrollPane1.setBackground(new java.awt.Color(255, 153, 153));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Hasta İsim / Soyad", "Cinsiyet", "Yaş ", "Randevu Zamanı"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -74,6 +167,14 @@ public class appointments_doctor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JFrame frame = new MainMenuDoctor(id);
+        frame.setVisible(true);
+        setVisible(false);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -105,7 +206,7 @@ public class appointments_doctor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new appointments_doctor().setVisible(true);
+                new appointments_doctor(1).setVisible(true);
             }
         });
     }
@@ -113,7 +214,9 @@ public class appointments_doctor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

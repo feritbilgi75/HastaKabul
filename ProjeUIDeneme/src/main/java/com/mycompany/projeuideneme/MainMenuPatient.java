@@ -4,6 +4,11 @@
  */
 package com.mycompany.projeuideneme;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.swing.JFrame;
 
 /**
@@ -15,8 +20,61 @@ public class MainMenuPatient extends javax.swing.JFrame {
     /**
      * Creates new form MainMenuPatient
      */
-    public MainMenuPatient() {
+    
+    private Integer id = 0;
+    public MainMenuPatient(String  email) {
         initComponents();
+        jButton1.setVisible(false);
+        Connection con = asliDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select rowid,name,surname from patient where email = ? ";
+            ps = con.prepareStatement(sql);
+            ps.setString(1, email);
+            
+            rs = ps.executeQuery();
+            this.id = rs.getInt("rowid");
+            jLabel2.setText(rs.getString("name")+" "+rs.getString("surname"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+        }
+    }
+    
+    public MainMenuPatient(Integer id) {
+        initComponents();
+        jButton1.setVisible(false);
+        Connection con = asliDbConnection.connect();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+            String sql = "Select name,surname from patient where rowid = ?";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            this.id = id;
+            rs = ps.executeQuery();
+            jLabel2.setText(rs.getString("name")+" "+rs.getString("surname"));
+        }catch(SQLException e){
+            System.out.println(e.toString());
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(SQLException e){
+                System.out.println(e.toString());
+            }
+        }
     }
 
     /**
@@ -31,10 +89,9 @@ public class MainMenuPatient extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         seePharmacyButton = new javax.swing.JButton();
         menuImage = new javax.swing.JLabel();
-        search_textfield = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        search_button = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -59,17 +116,15 @@ public class MainMenuPatient extends javax.swing.JFrame {
 
         seePharmacyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/PharmacyButton.png"))); // NOI18N
         seePharmacyButton.setBorderPainted(false);
+        seePharmacyButton.setIconTextGap(0);
         seePharmacyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 seePharmacyButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(seePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 470, 200));
-        getContentPane().add(menuImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 830, 430));
-
-        search_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        search_textfield.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(search_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 500, 70));
+        getContentPane().add(seePharmacyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 450, 150));
+        getContentPane().add(menuImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 650, 340));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 1120, -1));
 
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 51, 0));
@@ -79,15 +134,12 @@ public class MainMenuPatient extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 51, 0));
         jButton2.setText("Randevularım");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(708, 40, 150, 60));
-
-        search_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SearchIcon.png"))); // NOI18N
-        search_button.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_buttonActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(search_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 50, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 150, 60));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/User_Button.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -99,25 +151,33 @@ public class MainMenuPatient extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/MainMenu.png"))); // NOI18N
+        jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void search_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_search_buttonActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        JFrame frame = new PatientEditPageJFrame(id);
+        frame.setVisible(true);
+        setVisible(false);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void seePharmacyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seePharmacyButtonActionPerformed
         // TODO add your handling code here:
-        JFrame frame = new PharmacyDisplayJFrame();
+        JFrame frame = new PharmacyDisplayJFrame(id);
         frame.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_seePharmacyButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JFrame frame = new appointments_patient(id);
+        frame.setVisible(true);
+        setVisible(false);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,7 +209,7 @@ public class MainMenuPatient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenuPatient().setVisible(true);
+                new MainMenuPatient(1).setVisible(true);
             }
         });
     }
@@ -159,10 +219,9 @@ public class MainMenuPatient extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menuImage;
-    private javax.swing.JButton search_button;
-    private javax.swing.JTextField search_textfield;
     private javax.swing.JButton seePharmacyButton;
     // End of variables declaration//GEN-END:variables
 }

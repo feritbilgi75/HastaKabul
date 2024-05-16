@@ -6,6 +6,7 @@ package com.mycompany.projeuideneme;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 
@@ -18,6 +19,7 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
     /**
      * Creates new form SignUpDoctorPage
      */
+   
     public SignUpDoctorPage() {
         initComponents();
     }
@@ -40,7 +42,8 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         email_textfield = new javax.swing.JTextField();
         branch_textfield = new javax.swing.JTextField();
         clinic_textfield = new javax.swing.JTextField();
-        insurance_textfield = new javax.swing.JTextField();
+        province_textfield = new javax.swing.JTextField();
+        city_textfield = new javax.swing.JTextField();
         about_textfield = new javax.swing.JTextField();
         phone_number__textfield = new javax.swing.JTextField();
         search_textfield = new javax.swing.JTextField();
@@ -56,6 +59,8 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         docent = new javax.swing.JRadioButton();
         professor = new javax.swing.JRadioButton();
         assistant = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,9 +92,18 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         clinic_textfield.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(clinic_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 300, 540, 70));
 
-        insurance_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        insurance_textfield.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(insurance_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 470, 540, 70));
+        province_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        province_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        province_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                province_textfieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(province_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 470, 270, 70));
+
+        city_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        city_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(city_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 470, 270, 70));
 
         about_textfield.setBackground(new java.awt.Color(255, 255, 255));
         about_textfield.setForeground(new java.awt.Color(0, 0, 0));
@@ -171,6 +185,19 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         statue.add(assistant);
         getContentPane().add(assistant, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 400, 30, 30));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setText("Şehir");
+        jLabel2.setOpaque(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 440, 110, 30));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("İlçe");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 440, 100, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui_component_assets/SignUp_Menu_Doctor.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -214,15 +241,14 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         if(professor.isSelected()){
             statue = "Profesör";
         }
-        String insurance = insurance_textfield.getText();
+        String city = city_textfield.getText();
         String about = about_textfield.getText();
+        String province = province_textfield.getText();
         
         int phoneNumber = Integer.parseInt(phone_number__textfield.getText());
-        insert(firstName, lastName, gender, age, email, password, branch, clinic, statue, insurance, phoneNumber,about);
-        
-        
+        insert(firstName, lastName, gender, age, email, password, branch, clinic, statue, phoneNumber,about, city, province);
         //Main menu constructor yapılacak(üyelik işlemleri için)
-        JFrame menu = new MainMenuDoctor();
+        JFrame menu = new MainMenuDoctor(email);
         menu.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_signUp_buttonActionPerformed
@@ -241,11 +267,15 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_signUp_section_buttonActionPerformed
 
-    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, String branch, String clinic, String statue, String insurance, int phoneNumber, String about){
-        Connection con = doctorDbConnection.connect();
-        PreparedStatement ps = null;
+    private void province_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_province_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_province_textfieldActionPerformed
+
+    private static void insert(String firstName, String lastName, String gender, int age, String email, String password, String branch, String clinic, String statue, int phoneNumber, String about, String city, String province){
+        Connection con = asliDbConnection.connect();
+        PreparedStatement ps ;
         try{
-            String sql = "INSERT INTO doctors(firstName, lastName, gender, age, email, password, branch, clinic, statue, insurance, phoneNumber,about) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO doctors(firstName, lastName, gender, age, email, password, branch, clinic, statue, phoneNumber,about, city, province) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             ps = con.prepareStatement(sql);
             ps.setString(1, firstName);
             ps.setString(2, lastName);
@@ -256,9 +286,10 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
             ps.setString(7, branch);
             ps.setString(8, clinic);
             ps.setString(9, statue);
-            ps.setString(10, insurance);
-            ps.setInt(11, phoneNumber);
-            ps.setString(12, about);
+            ps.setInt(10, phoneNumber);
+            ps.setString(11, about);
+            ps.setString(12, city);
+            ps.setString(12, province);
             ps.execute();
             System.out.println("Data has been inserted!");
         } catch(SQLException e){
@@ -305,12 +336,14 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
     private javax.swing.JTextField age_textfield;
     private javax.swing.JRadioButton assistant;
     private javax.swing.JTextField branch_textfield;
+    private javax.swing.JTextField city_textfield;
     private javax.swing.JTextField clinic_textfield;
     private javax.swing.JRadioButton docent;
     private javax.swing.JTextField email_textfield;
     private javax.swing.ButtonGroup gender;
-    private javax.swing.JTextField insurance_textfield;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton login_section_button;
     private javax.swing.JRadioButton man;
     private javax.swing.JTextField name_textfield1;
@@ -318,6 +351,7 @@ public class SignUpDoctorPage extends javax.swing.JFrame {
     private javax.swing.JPasswordField password_field1;
     private javax.swing.JTextField phone_number__textfield;
     private javax.swing.JRadioButton professor;
+    private javax.swing.JTextField province_textfield;
     private javax.swing.JButton search_button;
     private javax.swing.JTextField search_textfield;
     private javax.swing.JButton signUp_button;
